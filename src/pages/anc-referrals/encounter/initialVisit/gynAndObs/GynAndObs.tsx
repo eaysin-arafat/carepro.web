@@ -11,7 +11,7 @@ import PastEncounters from "@/pages/chief-complaints/create/PastEncounters";
 import { cn } from "@/utilities/cn";
 import React, { useState } from "react";
 import { Loader } from "react-feather";
-import FormGroup from "../complaint/template/FormGroup";
+import FormGroup from "../../form-template/FormGroup";
 
 // const data = {
 //   1: "Previous Miscarriage",

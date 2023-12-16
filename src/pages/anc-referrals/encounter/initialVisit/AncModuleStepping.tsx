@@ -1,6 +1,6 @@
-import StepButton from "@/components/core/buttons/StepButton";
 import React from "react";
 import { ChevronRight } from "react-feather";
+import AncStepButton from "../form-template/AncStepButton";
 
 const AncModuleStepping = ({ activeStep, onStepClick }) => {
   const steps = [
@@ -15,7 +15,7 @@ const AncModuleStepping = ({ activeStep, onStepClick }) => {
       <div className="flex justify-evenly items-center min-w-[700px]">
         {steps.map((step, index) => (
           <React.Fragment key={index}>
-            <StepButton
+            <AncStepButton
               text={step}
               isActive={index === activeStep}
               onClick={() => onStepClick(index)}

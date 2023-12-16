@@ -1,5 +1,5 @@
 import { IoMdArrowDropdown } from "react-icons/io";
-import Input from "./../../../../../../components/core/form-elements/Input";
+import Input from "../../../../components/core/form-elements/Input";
 
 const CustomDropdown = ({
   label,

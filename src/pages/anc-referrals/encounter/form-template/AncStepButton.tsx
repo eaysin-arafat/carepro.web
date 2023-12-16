@@ -1,16 +1,18 @@
 import { cn } from "@/utilities/cn";
 import { Check } from "react-feather";
 
-const StepButton = ({
+const AncStepButton = ({
   isComplete = false,
   isActive = false,
   text = "text",
+  onClick = () => {},
 }) => {
   return (
     <button
       className={cn("flex items-center justify-center gap-1 text-sm py-3.5", {
         "border-b-[3px] border-b-[#1890FF]": isActive,
       })}
+      onClick={onClick}
     >
       {isComplete && (
         <span className="inline-block bg-[#1890FF] rounded-full p-[2px]">
@@ -29,4 +31,4 @@ const StepButton = ({
   );
 };
 
-export default StepButton;
+export default AncStepButton;

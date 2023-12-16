@@ -8,12 +8,12 @@ import PastEncounters from "@/pages/chief-complaints/create/PastEncounters";
 import Radio from "@/components/core/form-elements/Radio";
 import { useState } from "react";
 import Select from "@/components/core/form-elements/Select";
-import MultiDependentDropdown from "./template/MultiDependentDropdown";
+import MultiDependentDropdown from "../../form-template/MultiDependentDropdown";
 import DatePicker from "@/components/core/form-elements/CustomDatePicker";
 import Checkbox from "@/components/core/form-elements/Checkbox";
 import SubmitButton from "@/components/core/buttons/SubmitButton";
 import { BiPlusCircle } from "react-icons/bi";
-import CustomDropdown from "./template/CustomDropdown";
+import CustomDropdown from "../../form-template/CustomDropdown";
 
 const cronicICDDropdownData = [
   { id: 1, name: "Neoplasms" },
