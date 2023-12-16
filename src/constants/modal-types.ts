@@ -38,6 +38,15 @@ export const ancEncounterGynAndObsModalTypes = Object.freeze({
   addPastAntenatalVisits: "addPastAntenatalVisits",
 });
 
+export const ancEncounterExaminationAndDiagnosisModalTypes = Object.freeze({
+  addGeneralAssessment: "addGeneralAssessment",
+  addSystemExamination: "addSystemExamination",
+  addGlasgowComaScale: "addGlasgowComaScale",
+  addObstetricExamination: "addObstetricExamination",
+  addVaginalExamination: "addVaginalExamination",
+  addDiagnosis: "addDiagnosis",
+});
+
 export const departmentModalTypes = Object.freeze({
   addDepartment: "addDepartment",
   editDepartment: "editDepartment",

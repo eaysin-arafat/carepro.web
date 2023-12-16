@@ -10,13 +10,17 @@ import { useReadChiefComplaintByClientQuery } from "@/features/chief-complaint/c
 import PastEncounters from "@/pages/chief-complaints/create/PastEncounters";
 import { Loader, PlusCircle } from "react-feather";
 
-const PastAntenatalVisits = ({ toggler = () => {} }) => {
+const VaginalExamination = ({ toggler = () => {} }) => {
   const { data, isLoading, status } = useReadChiefComplaintByClientQuery(
     "a1497272-3783-46f6-922a-08dbd06dc4d8"
   );
 
   return (
-    <DefaultOpenModal isShow={true} title="Baby Details" toggler={toggler}>
+    <DefaultOpenModal
+      isShow={true}
+      title="Vaginal Examination"
+      toggler={toggler}
+    >
       <form>
         <div>
           <div className="flex flex-col gap-3">
@@ -81,4 +85,4 @@ const PastAntenatalVisits = ({ toggler = () => {} }) => {
   );
 };
 
-export default PastAntenatalVisits;
+export default VaginalExamination;
