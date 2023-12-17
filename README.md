@@ -18,8 +18,9 @@ And I have added some things to other files as needed to work, such as:
 * adding some custom classes in index.css file to facilitate the design, 
 * create a encounter-form-layout use previous code 
 * Added some features to some form components
-* And added some necessary components
-I did them in my template file.
+* added some route in application-router.tsx file for antanatal encounter form
+* added module-route.tsx file a route for antanatal index file
+* And added some necessary components I did them in my template file.
 template file path: 
 .
 └── src/
