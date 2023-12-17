@@ -14,6 +14,7 @@ type Props = {
   placeholder?: string;
   max?: string;
   numberOnly?: boolean;
+  readOnly?: boolean;
 };
 
 function Input({
@@ -28,6 +29,7 @@ function Input({
   className,
   placeholder,
   max,
+  readOnly,
 }: Props) {
   return (
     <div className="flex flex-col w-full items-start justify-start gap-[6px]">
@@ -44,6 +46,7 @@ function Input({
         disabled={disabled}
         max={max || "250"}
         placeholder={`${placeholder ? placeholder : "Enter" + " " + label}`}
+        readOnly={readOnly ? readOnly : false}
       />
       {errMsg && (
         <span className="text-dangerColor leading-[125%] font-normal ">

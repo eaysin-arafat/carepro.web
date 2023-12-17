@@ -1,7 +1,5 @@
 import CancelAndAddButton from "@/components/core/buttons/CancelAndAddButton";
 import SubmitButton from "@/components/core/buttons/SubmitButton";
-import DatePicker from "@/components/core/form-elements/CustomDatePicker";
-import Input from "@/components/core/form-elements/Input";
 import Select from "@/components/core/form-elements/Select";
 import Textarea from "@/components/core/form-elements/Textarea";
 import DefaultOpenModal from "@/components/core/modal/DefaultOpenModal";
@@ -24,21 +22,14 @@ const ObstetricExamination = ({ toggler = () => {} }) => {
       <form>
         <div>
           <div className="flex flex-col gap-3">
-            <Input label="Visit No." placeholder="Enter Visit No." />
-
-            <DatePicker
-              label="Visit Date"
-              onChange={() => {}}
-              name="visit-date"
-              placeholder="Enter Visit Date"
-            />
-
-            <Select label="Any Admission" className="py-1 rounded">
-              <option>Yes</option>
-              <option>No</option>
+            <Select label="System" className="py-1 rounded">
+              <option>Respiratory System</option>
+              <option>Gestro-Intestinal System</option>
+              <option>Cardivascular System</option>
+              <option>Nervous System</option>
             </Select>
 
-            <Textarea label="Findings" placeholder="Enter findings" />
+            <Textarea label="Note" placeholder="Comment" />
 
             <SubmitButton
               title="Add"
@@ -47,10 +38,10 @@ const ObstetricExamination = ({ toggler = () => {} }) => {
             />
             <div>
               <div className="grid grid-cols-4 gap-1 my-2">
-                <p className="form-submitted-data-list">Visit No</p>
-                <p className="form-submitted-data-list">Visit Date</p>
-                <p className="form-submitted-data-list">Findings</p>
-                <p className="form-submitted-data-list">Any Admisson?</p>
+                <p className="form-submitted-data-list">Physical System</p>
+                <p className="form-submitted-data-list">Note</p>
+                <p className="form-submitted-data-list"></p>
+                <p className="form-submitted-data-list"></p>
               </div>
               <hr />
 

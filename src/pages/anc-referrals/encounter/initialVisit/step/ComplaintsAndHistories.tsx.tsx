@@ -12,10 +12,10 @@ import TBConstitutionalSymptoms from "../complaint/TBConstitutionalSymptoms";
 import ReviewOfSystems from "../complaint/ReviewOfSystems";
 import PastMedicalHistory from "../complaint/PastMedicalHistory";
 import DrugAdherence from "../complaint/DrugAdherence";
-import ChronicConditions from "../complaint/ChronicConditions";
 import AncAllergies from "../complaint/AncAllergies";
 import HistoryOfBloodTransfusions from "../complaint/HistoryOfBloodTransfusions";
 import FamilySocial from "../complaint/FamilySocial";
+import ChronicConditions from "../complaint/chronic-conditions/ChronicConditions";
 
 const ComplaintsAndHistories = () => {
   // const [openModal, setOpenModal] = React.useState(false);

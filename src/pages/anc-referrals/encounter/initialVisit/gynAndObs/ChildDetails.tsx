@@ -93,7 +93,7 @@ const ChildDetails = ({ toggler = () => {} }) => {
               </div>
               <hr />
 
-              <div className="grid grid-cols-2 my-2">
+              <div className="grid grid-cols-10 my-2">
                 <p className="form-submitted-data-list"></p>
                 <p className="form-submitted-data-list"></p>
                 <p className="form-submitted-data-list"></p>

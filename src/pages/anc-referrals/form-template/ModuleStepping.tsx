@@ -1,15 +1,8 @@
 import React from "react";
 import { ChevronRight } from "react-feather";
-import AncStepButton from "../form-template/AncStepButton";
+import AncStepButton from "./AncStepButton";
 
-const AncModuleStepping = ({ activeStep, onStepClick }) => {
-  const steps = [
-    "Complaint & Histories",
-    "Gyn & Obs Histories",
-    "Examination & Diagnosis",
-    "Treatment Plan",
-  ];
-
+const ModuleStepping = ({ activeStep, onStepClick, steps = [] }) => {
   return (
     <div className="text-center shadow-md border rounded border-borderColor text-[#03045E] overflow-x-auto no-scrollbar font-semibold font-poppins">
       <div className="flex justify-evenly items-center min-w-[700px]">
@@ -32,4 +25,4 @@ const AncModuleStepping = ({ activeStep, onStepClick }) => {
   );
 };
 
-export default AncModuleStepping;
+export default ModuleStepping;

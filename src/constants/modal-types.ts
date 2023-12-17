@@ -47,6 +47,14 @@ export const ancEncounterExaminationAndDiagnosisModalTypes = Object.freeze({
   addDiagnosis: "addDiagnosis",
 });
 
+export const ancEncounterPlanModalTypes = Object.freeze({
+  addCounsellingService: "addCounsellingService",
+  addScreeningAndPrevention: "addScreeningAndPrevention",
+  addTreatmentPlan: "addTreatmentPlan",
+});
+
+// ! end anc encounter module type
+
 export const departmentModalTypes = Object.freeze({
   addDepartment: "addDepartment",
   editDepartment: "editDepartment",

@@ -10,7 +10,7 @@ import SystemExamination from "../examination-and-diagnosis/SystemExamination";
 import GlasgowComaScale from "../examination-and-diagnosis/GlasgowComaScale";
 import ObstetricExamination from "../examination-and-diagnosis/ObstetricExamination";
 import VaginalExamination from "../examination-and-diagnosis/VaginalExamination";
-import Diagnosis from "../examination-and-diagnosis/Diagnosis";
+import Diagnosis from "../examination-and-diagnosis/diagnosis/Diagnosis";
 
 const ExaminationAndDiagnosis = () => {
   // const [openModal, setOpenModal] = React.useState(false);

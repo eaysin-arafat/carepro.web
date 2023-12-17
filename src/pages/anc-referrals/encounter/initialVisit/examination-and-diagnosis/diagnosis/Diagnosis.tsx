@@ -1,19 +1,16 @@
 import CancelAndAddButton from "@/components/core/buttons/CancelAndAddButton";
-import Textarea from "@/components/core/form-elements/Textarea";
 import DefaultOpenModal from "@/components/core/modal/DefaultOpenModal";
 import PastRecordContainers from "@/components/past-record-containers/PastRecordContainers";
 import { useReadChiefComplaintByClientQuery } from "@/features/chief-complaint/chief-complaint-api";
-import { Loader, PlusCircle } from "react-feather";
+import { Loader } from "react-feather";
 import PastEncounters from "@/pages/chief-complaints/create/PastEncounters";
 import Radio from "@/components/core/form-elements/Radio";
 import { useState } from "react";
-import Select from "@/components/core/form-elements/Select";
-import MultiDependentDropdown from "../../form-template/MultiDependentDropdown";
-import DatePicker from "@/components/core/form-elements/CustomDatePicker";
-import Checkbox from "@/components/core/form-elements/Checkbox";
 import SubmitButton from "@/components/core/buttons/SubmitButton";
 import { BiPlusCircle } from "react-icons/bi";
-import CustomDropdown from "../../form-template/CustomDropdown";
+import CustomDropdown from "../../../../form-template/CustomDropdown";
+import CustomDependentDropdownGroup from "../../../../form-template/CustomDependentDropdownGroup";
+import DiagnosisMultiDependentDropdown from "./DiagnosisMultiDependentDropdown";
 
 const cronicICDDropdownData = [
   { id: 1, name: "Neoplasms" },
@@ -24,7 +21,7 @@ const cronicICDDropdownData = [
   { id: 6, name: "Insomenia" },
 ];
 
-const ChronicConditions = ({ toggler }) => {
+const Diagnosis = ({ toggler }) => {
   const { data, isLoading, status } = useReadChiefComplaintByClientQuery(
     "a1497272-3783-46f6-922a-08dbd06dc4d8"
   );
@@ -52,9 +49,7 @@ const ChronicConditions = ({ toggler }) => {
               <Radio
                 label="National Treatment Guideline"
                 name="chronicF"
-                checked={Boolean(
-                  selectedOption === "National Treatment Guideline"
-                )}
+                checked={selectedOption === "National Treatment Guideline"}
                 onChange={() =>
                   setSelectedOption("National Treatment Guideline")
                 }
@@ -67,9 +62,9 @@ const ChronicConditions = ({ toggler }) => {
               />
             </div>
 
-            <div className="mt-4 px-12 py-8 border border-gray-300 flex flex-col gap-5 rounded">
+            <CustomDependentDropdownGroup>
               {selectedOption === "National Treatment Guideline" && (
-                <MultiDependentDropdown />
+                <DiagnosisMultiDependentDropdown />
               )}
 
               {selectedOption === "ICD 11" && (
@@ -80,52 +75,12 @@ const ChronicConditions = ({ toggler }) => {
                   inputValue={icdInputValue}
                   setInputValue={setIcdInputValue}
                   open={icdOpen}
-                  setOpen={setIcdOpen}
-                  onClick={handleIcdSelectOption}
+                  optionOnClick={handleIcdSelectOption}
+                  selectOnClick={() => setIcdOpen((prev) => !prev)}
                   label="ICD 11"
                 />
               )}
-            </div>
-
-            <div className="flex gap-2 items-center justify-center">
-              <Radio
-                label="Chronic Condition"
-                name="chronicCondition"
-                checked
-                onChange={() => {}}
-              />
-              <Radio
-                label="Non Chronic Condition"
-                name="chronicCondition"
-                onChange={() => {}}
-                checked
-              />
-            </div>
-
-            <div className="flex gap-2 items-center justify-center space-x-5">
-              <DatePicker
-                name="diagnosed-date"
-                label="Date Diagnosed"
-                placeholder="Enter Date Diagnosed"
-              />
-
-              <Checkbox label="Still Outgoing" className="ml-8" />
-
-              <DatePicker
-                name="resolved-date"
-                label="Date Resolved"
-                placeholder="Enter Date Diagnosed"
-              />
-
-              <Select label="Certainty">
-                <option value="">Confirmed</option>
-                <option value="">Suspected</option>
-                <option value="">Rule Out</option>
-                <option value="">Ruled Out</option>
-              </Select>
-            </div>
-
-            <Textarea label="Comments" placeholder="Enter Comments" />
+            </CustomDependentDropdownGroup>
 
             <SubmitButton
               title="Add"
@@ -134,20 +89,17 @@ const ChronicConditions = ({ toggler }) => {
             />
 
             <div>
-              <div className="grid grid-cols-12 my-2">
-                <p className="text-xs font-semibold">Type</p>
-                <p className="text-xs font-semibold">Condition</p>
-                <p className="text-xs font-semibold">Diagnosed</p>
-                <p className="text-xs font-semibold">Resolved</p>
-                <p className="text-xs font-semibold">Ongoing</p>
-                <p className="text-xs font-semibold">Certainty</p>
-                <p className="text-xs font-semibold col-span-2">NTG</p>
-                <p className="text-xs font-semibold col-span-2">ICD</p>
-                <p className="text-xs font-semibold col-span-2">Comments</p>
+              <div className="grid grid-cols-4 my-2">
+                <p className="text-xs font-semibold">NTG</p>
+                <p className="text-xs font-semibold">ICD</p>
+                <p className="text-xs font-semibold"></p>
+                <p className="text-xs font-semibold"></p>
               </div>
               <hr />
 
-              <div className="grid grid-cols-2 my-2">
+              <div className="grid grid-cols-4 my-2">
+                <p className="text-xs font-semibold"></p>
+                <p className="text-xs font-semibold"></p>
                 <p className="text-xs font-semibold"></p>
                 <p className="text-xs font-semibold"></p>
               </div>
@@ -176,4 +128,4 @@ const ChronicConditions = ({ toggler }) => {
   );
 };
 
-export default ChronicConditions;
+export default Diagnosis;

@@ -1,20 +1,21 @@
 import PastRecordList from "@/components/shared/past-record-list/PastRecordList";
 import FormLayout from "@/layout/FormLayout";
-import ComplaintsAndHistories from "./step/ComplaintsAndHistories.tsx";
-import GynAndObsHistories from "./step/GynAndObsHistories.tsx";
 import { useState } from "react";
-import ExaminationAndDiagnosis from "./step/ExaminationAndDiagnosis.tsx";
-import Plan from "./step/Plan.tsx";
 import ModuleStepping from "../../form-template/ModuleStepping.tsx";
+import ComplaintsAndHistories from "./../initialVisit/step/ComplaintsAndHistories.tsx";
+import GynAndObsHistories from "./../initialVisit/step/GynAndObsHistories";
+import ExaminationAndDiagnosis from "./../initialVisit/step/ExaminationAndDiagnosis";
+import Plan from "./../initialVisit/step/Plan";
 
 const steppings = [
-  "Complaint & Histories",
+  "Patient Locator",
+  "Complaints & Histories",
   "Gyn & Obs Histories",
   "Examination & Diagnosis",
-  "Treatment Plan",
+  "Plan",
 ];
 
-const InitialVisit = () => {
+const InitialAlreadyOnART = () => {
   const [activeStep, setActiveStep] = useState(0);
 
   const steps = [
@@ -53,4 +54,4 @@ const InitialVisit = () => {
   );
 };
 
-export default InitialVisit;
+export default InitialAlreadyOnART;

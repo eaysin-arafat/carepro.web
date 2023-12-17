@@ -1,8 +1,8 @@
 // import React, { useState } from "react";
 // import CustomDropdown from "./CustomDropdown";
 
-import { useState } from "react";
-import CustomDropdown from "./CustomDropdown";
+import { Fragment, useState } from "react";
+import CustomDropdown from "../../../../form-template/CustomDropdown";
 
 const ntglevelData = [
   {
@@ -174,7 +174,7 @@ const ntglevelData = [
   },
 ];
 
-const MultiDependentDropdown = () => {
+const DiagnosisMultiDependentDropdown = () => {
   const [selectedLevel1, setSelectedLevel1] = useState("");
   const [selectedLevel2, setSelectedLevel2] = useState("");
   const [selectedLevel3, setSelectedLevel3] = useState("");
@@ -204,8 +204,25 @@ const MultiDependentDropdown = () => {
     setOpenLevel3(false);
   };
 
+  const handleOpenLevel1 = () => {
+    setOpenLevel1((prev) => !prev);
+    setOpenLevel2(false);
+    setOpenLevel3(false);
+  };
+
+  const handleOpenLevel2 = () => {
+    setOpenLevel2((prev) => !prev);
+    setOpenLevel1(false);
+    setOpenLevel3(false);
+  };
+  const handleOpenLevel3 = () => {
+    setOpenLevel3((prev) => !prev);
+    setOpenLevel1(false);
+    setOpenLevel2(false);
+  };
+
   return (
-    <div className="flex flex-col gap-3">
+    <Fragment>
       <div>
         <CustomDropdown
           data={ntglevelData}
@@ -214,8 +231,8 @@ const MultiDependentDropdown = () => {
           inputValue={inputValueLevel1}
           setInputValue={setInputValueLevel1}
           open={openLevel1}
-          setOpen={setOpenLevel1}
-          onClick={handleSelectOptionLevel1}
+          optionOnClick={handleSelectOptionLevel1}
+          selectOnClick={handleOpenLevel1}
           label="NTG Level 1"
         />
       </div>
@@ -230,8 +247,8 @@ const MultiDependentDropdown = () => {
           inputValue={inputValueLevel2}
           setInputValue={setInputValueLevel2}
           open={openLevel2}
-          setOpen={setOpenLevel2}
-          onClick={handleSelectOptionLevel2}
+          optionOnClick={handleSelectOptionLevel2}
+          selectOnClick={handleOpenLevel2}
           label="NTG Level 2"
         />
       </div>
@@ -247,13 +264,13 @@ const MultiDependentDropdown = () => {
           inputValue={inputValueLevel3}
           setInputValue={setInputValueLevel3}
           open={openLevel3}
-          setOpen={setOpenLevel3}
-          onClick={handleSelectOptionLevel3}
+          optionOnClick={handleSelectOptionLevel3}
+          selectOnClick={handleOpenLevel3}
           label="NTG Level 3"
         />
       </div>
-    </div>
+    </Fragment>
   );
 };
 
-export default MultiDependentDropdown;
+export default DiagnosisMultiDependentDropdown;
