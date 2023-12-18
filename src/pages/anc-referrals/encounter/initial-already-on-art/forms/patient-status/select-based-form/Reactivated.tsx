@@ -1,7 +1,55 @@
-import React from "react";
+import DatePicker from "@/components/core/form-elements/CustomDatePicker";
+import Input from "@/components/core/form-elements/Input";
+import Select from "@/components/core/form-elements/Select";
+
+import FormGroup from "@/pages/anc-referrals/form-template/FormGroup";
+import { useState } from "react";
 
 const Reactivated = () => {
-  return <div>Reactivated</div>;
+  const [reactivateReasonSelect, setReactivateReasonSelect] = useState("");
+
+  const handleStoppingReasonSelect = (event) => {
+    setReactivateReasonSelect(event.target.value);
+  };
+
+  return (
+    <form>
+      <div>
+        <div className="flex flex-col gap-3">
+          <FormGroup className="" title="Stopped ART">
+            <div className="flex gap-2 items-center justify-center">
+              <DatePicker
+                label="Date Reactivated"
+                onChange={() => {}}
+                name="reactivate-date"
+                placeholder="Enter Date of Reactivated"
+              />
+
+              <Select
+                label="Reason for being reactivated"
+                className="py-3 rounded"
+                value={reactivateReasonSelect}
+                onChange={handleStoppingReasonSelect}
+              >
+                <option>Early termination</option>
+                <option>Ectopic</option>
+                <option>Full term</option>
+                <option>Molar pregnancy</option>
+                <option>Pseudo pregnancy</option>
+                <option>Other</option>
+              </Select>
+            </div>
+
+            <Input
+              disabled={reactivateReasonSelect !== "Other"}
+              label="Other reason"
+              placeholder="Enter Other reason"
+            />
+          </FormGroup>
+        </div>
+      </div>
+    </form>
+  );
 };
 
 export default Reactivated;
