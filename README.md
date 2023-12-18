@@ -4,12 +4,17 @@
 I have worked on Antenatal(ANC) module only.
 
 Antenatal(ANC) module file path:
+
 .
 └── src/
     └── pages/
         └── anc-referrals/
             ├── encounter
-            └── index
+            ├── index
+            └── form-tamplate
+            
+            
+Antenatal(ANC): There are multiple one-of-a-kind forms in each route. I did all of them but didn't add the same ones to all of them. It's because of time.
 
 And I have added some things to other files as needed to work, such as: 
 
@@ -25,7 +30,6 @@ template file path:
 └── src/
     └── pages/
         └── anc-referrals/
-            └── encounter/
-                └── form-tamplate
+            └── form-tamplate
 
 The files outside of my module have comments attached to the work I have done.  
