@@ -9,7 +9,7 @@ const ModuleStepping = ({ activeStep, onStepClick, steps = [] }) => {
         {steps.map((step, index) => (
           <React.Fragment key={index}>
             <AncStepButton
-              text={step}
+              text={step.name}
               isActive={index === activeStep}
               onClick={() => onStepClick(index)}
             />
