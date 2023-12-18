@@ -1,10 +1,10 @@
 import PastRecordList from "@/components/shared/past-record-list/PastRecordList";
 import FormLayout from "@/layout/FormLayout";
-import ComplaintsAndHistories from "./step/ComplaintsAndHistories.tsx";
-import GynAndObsHistories from "./step/GynAndObsHistories.tsx";
+import ComplaintsAndHistories from "./step/InitialComplaintsAndHistories.tsx";
+import GynAndObsHistories from "./step/InitialGynAndObsHistories.tsx";
 import { useState } from "react";
-import ExaminationAndDiagnosis from "./step/ExaminationAndDiagnosis.tsx";
-import Plan from "./step/Plan.tsx";
+import ExaminationAndDiagnosis from "./step/InitialExaminationAndDiagnosis.tsx";
+import Plan from "./step/InitialPlan.tsx";
 import ModuleStepping from "../../form-template/ModuleStepping.tsx";
 
 const steppings = [

@@ -1,4 +1,4 @@
-const FormGroup = ({ children, title, className }) => {
+const FormGroup = ({ children, title, className = "" }) => {
   return (
     <div className="my-1">
       <h1 className="input-group-title">{title}</h1>

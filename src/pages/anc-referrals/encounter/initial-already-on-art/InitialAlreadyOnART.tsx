@@ -2,13 +2,16 @@ import PastRecordList from "@/components/shared/past-record-list/PastRecordList"
 import FormLayout from "@/layout/FormLayout";
 import { useState } from "react";
 import ModuleStepping from "../../form-template/ModuleStepping.tsx";
-import ComplaintsAndHistories from "./../initialVisit/step/ComplaintsAndHistories.tsx";
-import GynAndObsHistories from "./../initialVisit/step/GynAndObsHistories";
-import ExaminationAndDiagnosis from "./../initialVisit/step/ExaminationAndDiagnosis";
-import Plan from "./../initialVisit/step/Plan";
+import ComplaintsAndHistories from "../initialVisit/step/InitialComplaintsAndHistories.tsx";
+import GynAndObsHistories from "../initialVisit/step/InitialGynAndObsHistories.tsx";
+import ExaminationAndDiagnosis from "../initialVisit/step/InitialExaminationAndDiagnosis.tsx";
+import Plan from "../initialVisit/step/InitialPlan.tsx";
+import InitialAlreadyPatientLocator from "./step/InitialAlreadyPatientLocator.tsx";
+import InitialAlreadyPatientStatus from "./step/InitialAlreadyPatientStatus.tsx";
 
 const steppings = [
   "Patient Locator",
+  "patient Status",
   "Complaints & Histories",
   "Gyn & Obs Histories",
   "Examination & Diagnosis",
@@ -19,6 +22,8 @@ const InitialAlreadyOnART = () => {
   const [activeStep, setActiveStep] = useState(0);
 
   const steps = [
+    <InitialAlreadyPatientLocator />,
+    <InitialAlreadyPatientStatus />,
     <ComplaintsAndHistories />,
     <GynAndObsHistories />,
     <ExaminationAndDiagnosis />,

@@ -5,14 +5,14 @@ import { closeAddModal, openAddModal } from "@/features/modal/modal-slice";
 import { RootState } from "@/app/store";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-import GeneralAssessment from "../examination-and-diagnosis/GeneralAssessment";
-import SystemExamination from "../examination-and-diagnosis/SystemExamination";
-import GlasgowComaScale from "../examination-and-diagnosis/GlasgowComaScale";
-import ObstetricExamination from "../examination-and-diagnosis/ObstetricExamination";
-import VaginalExamination from "../examination-and-diagnosis/VaginalExamination";
-import Diagnosis from "../examination-and-diagnosis/diagnosis/Diagnosis";
+import GeneralAssessment from "../forms/examination-and-diagnosis/GeneralAssessment";
+import GlasgowComaScale from "../forms/examination-and-diagnosis/GlasgowComaScale";
+import ObstetricExamination from "../forms/examination-and-diagnosis/ObstetricExamination";
+import VaginalExamination from "../forms/examination-and-diagnosis/VaginalExamination";
+import Diagnosis from "../forms/examination-and-diagnosis/diagnosis/Diagnosis";
+import SystemExamination from "../forms/examination-and-diagnosis/SystemExamination";
 
-const ExaminationAndDiagnosis = () => {
+const InitialExaminationAndDiagnosis = () => {
   // const [openModal, setOpenModal] = React.useState(false);
 
   // * Responsive Hokes
@@ -154,4 +154,4 @@ const ExaminationAndDiagnosis = () => {
   );
 };
 
-export default ExaminationAndDiagnosis;
+export default InitialExaminationAndDiagnosis;

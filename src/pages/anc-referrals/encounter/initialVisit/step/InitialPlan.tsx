@@ -5,11 +5,11 @@ import { closeAddModal, openAddModal } from "@/features/modal/modal-slice";
 import { RootState } from "@/app/store";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-import CounsellingService from "../plan/CounsellingService";
-import ScreeningAndPrevention from "../plan/ScreeningAndPrevention";
-import TreatmentPlan from "../plan/TreatmentPlan";
+import CounsellingService from "./../forms/plan/CounsellingService";
+import ScreeningAndPrevention from "../forms/plan/ScreeningAndPrevention";
+import TreatmentPlan from "../forms/plan/TreatmentPlan";
 
-const Plan = () => {
+const InitialPlan = () => {
   // const [openModal, setOpenModal] = React.useState(false);
 
   // * Responsive Hokes
@@ -91,4 +91,4 @@ const Plan = () => {
   );
 };
 
-export default Plan;
+export default InitialPlan;

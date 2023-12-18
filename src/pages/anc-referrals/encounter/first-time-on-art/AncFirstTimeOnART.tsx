@@ -2,10 +2,10 @@ import PastRecordList from "@/components/shared/past-record-list/PastRecordList"
 import FormLayout from "@/layout/FormLayout";
 import { useState } from "react";
 import ModuleStepping from "../../form-template/ModuleStepping.tsx";
-import ComplaintsAndHistories from "../initialVisit/step/ComplaintsAndHistories.tsx.tsx";
-import GynAndObsHistories from "../initialVisit/step/GynAndObsHistories.tsx";
-import ExaminationAndDiagnosis from "../initialVisit/step/ExaminationAndDiagnosis.tsx";
-import Plan from "../initialVisit/step/Plan.tsx";
+import ComplaintsAndHistories from "../initialVisit/step/InitialComplaintsAndHistories.tsx";
+import GynAndObsHistories from "../initialVisit/step/InitialGynAndObsHistories.tsx";
+import ExaminationAndDiagnosis from "../initialVisit/step/InitialExaminationAndDiagnosis.tsx";
+import Plan from "../initialVisit/step/InitialPlan.tsx";
 
 const steppings = [
   "Patient Locator",

@@ -79,11 +79,7 @@ const Bookings = ({ toggler = () => {} }) => {
   };
 
   return (
-    <DefaultOpenModal
-      isShow={true}
-      title="History Of Blood Transfusions"
-      toggler={toggler}
-    >
+    <DefaultOpenModal isShow={true} title="Bookings" toggler={toggler}>
       <form>
         <div>
           <div className="flex flex-col gap-3">

@@ -53,6 +53,17 @@ export const ancEncounterPlanModalTypes = Object.freeze({
   addTreatmentPlan: "addTreatmentPlan",
 });
 
+export const ancEncounterPatientLocatorModalTypes = Object.freeze({
+  addEntryAndSource: "addEntryAndSource",
+  addHouseholds: "addHouseholds",
+  addNextOfKin: "addNextOfKin",
+  addDisclosureOrITPNS: "addDisclosureOrITPNS",
+});
+
+export const ancEncounterPatientStatusModalTypes = Object.freeze({
+  addPatientStatus: "addPatientStatus",
+});
+
 // ! end anc encounter module type
 
 export const departmentModalTypes = Object.freeze({

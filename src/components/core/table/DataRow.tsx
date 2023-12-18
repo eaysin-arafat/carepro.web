@@ -10,7 +10,7 @@ type Props = {
 
 const DataRow: React.FC<Props> = ({ title, data, titleClass, dataClass }) => {
   return (
-    <div className="flex items-start justify-end xs:justify-start">
+    <div className="flex justify-between">
       <div
         className={cn(
           "xs:min-w-[145px] max-w-[145px] flex justify-between mr-5 items-start text-textColor text-sm py-2",

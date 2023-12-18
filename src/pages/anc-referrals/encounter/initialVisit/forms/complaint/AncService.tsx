@@ -16,9 +16,12 @@ const AncService = ({ toggler }) => {
       <form>
         <div className="flex flex-col gap-6">
           <div className="space-y-4">
-            <Input placeholder="Safe Motherhood No." />
-            <Input placeholder="Gravida" />
-            <Input placeholder="Parity" />
+            <Input
+              label="Safe Motherhood No."
+              placeholder="Enter Safe Motherhood No."
+            />
+            <Input label="Gravida" placeholder="Enter Gravida" />
+            <Input label="Parity" placeholder="Enter Parity" />
           </div>
         </div>
         <hr className="my-6" />

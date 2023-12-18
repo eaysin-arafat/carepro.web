@@ -4,8 +4,8 @@ import PastRecordContainers from "@/components/past-record-containers/PastRecord
 import { useReadChiefComplaintByClientQuery } from "@/features/chief-complaint/chief-complaint-api";
 import PastEncounters from "@/pages/chief-complaints/create/PastEncounters";
 import { Loader } from "react-feather";
-import Textarea from "./../../../../../components/core/form-elements/Textarea";
 import Checkbox from "@/components/core/form-elements/Checkbox";
+import Textarea from "@/components/core/form-elements/Textarea";
 
 const TreatmentPlan = ({ toggler = () => {} }) => {
   const { data, isLoading, status } = useReadChiefComplaintByClientQuery(

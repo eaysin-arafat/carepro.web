@@ -8,7 +8,7 @@ import { useReadChiefComplaintByClientQuery } from "@/features/chief-complaint/c
 import PastEncounters from "@/pages/chief-complaints/create/PastEncounters";
 import { Loader, PlusCircle } from "react-feather";
 
-const ObstetricExamination = ({ toggler = () => {} }) => {
+const SystemExamination = ({ toggler = () => {} }) => {
   const { data, isLoading, status } = useReadChiefComplaintByClientQuery(
     "a1497272-3783-46f6-922a-08dbd06dc4d8"
   );
@@ -76,4 +76,4 @@ const ObstetricExamination = ({ toggler = () => {} }) => {
   );
 };
 
-export default ObstetricExamination;
+export default SystemExamination;

@@ -7,7 +7,7 @@ export const LineSkeleton: React.FC<LineSkeletonProps> = ({ className }) => {
   return (
     <div
       className={cn(
-        "animate-pulse h-5  bg-gradient-to-br from-gray-300 to-gray-200 rounded-full mb-2",
+        "animate-pulse h-5 bg-gradient-to-br from-gray-300 to-gray-200 rounded-full mb-2",
         className
       )}
     ></div>

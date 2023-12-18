@@ -1,5 +1,7 @@
 // import React, { useState } from "react";
 
+// ! here I add two props [readOnly, defaultValue]
+
 type Props = {
   value?: string | number;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
@@ -15,6 +17,7 @@ type Props = {
   max?: string;
   numberOnly?: boolean;
   readOnly?: boolean;
+  defaultValue?: string;
 };
 
 function Input({
@@ -30,6 +33,7 @@ function Input({
   placeholder,
   max,
   readOnly,
+  defaultValue,
 }: Props) {
   return (
     <div className="flex flex-col w-full items-start justify-start gap-[6px]">
@@ -47,6 +51,7 @@ function Input({
         max={max || "250"}
         placeholder={`${placeholder ? placeholder : "Enter" + " " + label}`}
         readOnly={readOnly ? readOnly : false}
+        defaultValue={defaultValue}
       />
       {errMsg && (
         <span className="text-dangerColor leading-[125%] font-normal ">

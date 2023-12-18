@@ -1,8 +1,8 @@
 // import React, { useState } from "react";
 // import CustomDropdown from "./CustomDropdown";
 
+import CustomDropdown from "@/pages/anc-referrals/form-template/CustomDropdown";
 import { Fragment, useState } from "react";
-import CustomDropdown from "../../../../form-template/CustomDropdown";
 
 const ntglevelData = [
   {

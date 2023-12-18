@@ -5,13 +5,13 @@ import { closeAddModal, openAddModal } from "@/features/modal/modal-slice";
 import { RootState } from "@/app/store";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-import Bookings from "../gynAndObs/Bookings";
-import GynAndObs from "../gynAndObs/GynAndObs";
-import MotherDetails from "../gynAndObs/MotherDetails";
-import ChildDetails from "../gynAndObs/ChildDetails";
-import PastAntenatalVisits from "../gynAndObs/PastAntenatalVisits";
+import Bookings from "../forms/gynAndObs/Bookings";
+import GynAndObs from "../forms/gynAndObs/GynAndObs";
+import MotherDetails from "../forms/gynAndObs/MotherDetails";
+import ChildDetails from "../forms/gynAndObs/ChildDetails";
+import PastAntenatalVisits from "../forms/gynAndObs/PastAntenatalVisits";
 
-const GynAndObsHistories = () => {
+const InitialGynAndObsHistories = () => {
   // const [openModal, setOpenModal] = React.useState(false);
 
   // * Responsive Hokes
@@ -120,4 +120,4 @@ const GynAndObsHistories = () => {
   );
 };
 
-export default GynAndObsHistories;
+export default InitialGynAndObsHistories;

@@ -5,19 +5,19 @@ import { closeAddModal, openAddModal } from "@/features/modal/modal-slice";
 import { RootState } from "@/app/store";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-import AncService from "../complaint/AncService";
-import PresentingComplaints from "../complaint/PresentingComplaints";
-import AncScranning from "../complaint/AncScranning";
-import TBConstitutionalSymptoms from "../complaint/TBConstitutionalSymptoms";
-import ReviewOfSystems from "../complaint/ReviewOfSystems";
-import PastMedicalHistory from "../complaint/PastMedicalHistory";
-import DrugAdherence from "../complaint/DrugAdherence";
-import AncAllergies from "../complaint/AncAllergies";
-import HistoryOfBloodTransfusions from "../complaint/HistoryOfBloodTransfusions";
-import FamilySocial from "../complaint/FamilySocial";
-import ChronicConditions from "../complaint/chronic-conditions/ChronicConditions";
+import AncService from "../forms/complaint/AncService";
+import PresentingComplaints from "../forms/complaint/PresentingComplaints";
+import AncScranning from "../forms/complaint/AncScranning";
+import TBConstitutionalSymptoms from "../forms/complaint/TBConstitutionalSymptoms";
+import ReviewOfSystems from "../forms/complaint/ReviewOfSystems";
+import PastMedicalHistory from "../forms/complaint/PastMedicalHistory";
+import DrugAdherence from "../forms/complaint/DrugAdherence";
+import ChronicConditions from "../forms/complaint/chronic-conditions/ChronicConditions";
+import AncAllergies from "../forms/complaint/AncAllergies";
+import HistoryOfBloodTransfusions from "../forms/complaint/HistoryOfBloodTransfusions";
+import FamilySocial from "../forms/complaint/FamilySocial";
 
-const ComplaintsAndHistories = () => {
+const InitialComplaintsAndHistories = () => {
   // const [openModal, setOpenModal] = React.useState(false);
 
   // * Responsive Hokes
@@ -241,4 +241,4 @@ const ComplaintsAndHistories = () => {
   );
 };
 
-export default ComplaintsAndHistories;
+export default InitialComplaintsAndHistories;
