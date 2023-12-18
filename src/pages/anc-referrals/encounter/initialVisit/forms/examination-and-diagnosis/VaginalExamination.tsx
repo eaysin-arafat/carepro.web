@@ -22,7 +22,7 @@ const VaginalExamination = ({ toggler = () => {} }) => {
       <form>
         <div>
           <div className="flex flex-col gap-3">
-            <Select label="Position" className="py-1 rounded">
+            <Select label="Position" required>
               <option>A</option>
               <option>B</option>
               <option>C</option>

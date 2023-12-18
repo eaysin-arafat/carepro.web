@@ -25,7 +25,7 @@ const ScreeningAndPrevention = ({ toggler = () => {} }) => {
               <Select
                 label="Malaria Dose"
                 placeholder="Select Malaria Dose"
-                className="py-3 rounded"
+                required
               >
                 <option>ITN issued</option>
                 <option>ITN used</option>
@@ -39,7 +39,7 @@ const ScreeningAndPrevention = ({ toggler = () => {} }) => {
             </div>
 
             <div className="flex gap-2 items-center justify-center">
-              <Select label="Tetanus" className="py-1 rounded">
+              <Select label="Tetanus" required>
                 <option>Pregnancy fully TT protected</option>
                 <option>TT does given</option>
               </Select>
@@ -51,19 +51,19 @@ const ScreeningAndPrevention = ({ toggler = () => {} }) => {
             </div>
 
             <div className="flex gap-2 items-center justify-center">
-              <Select label="Anemia svreening" className="py-1 rounded">
+              <Select label="Anemia svreening" required>
                 <option>Screened</option>
                 <option>Iron given</option>
                 <option>FeSO4 given</option>
               </Select>
 
-              <Select label="Syphilis" className="py-1 rounded">
+              <Select label="Syphilis" required>
                 <option>RRR test done</option>
                 <option>Test positive</option>
                 <option>Benz Pen given</option>
               </Select>
 
-              <Select label="Hepatitis B" className="py-1 rounded">
+              <Select label="Hepatitis B" required>
                 <option>HepB test done</option>
                 <option>Test positive</option>
                 <option>Treated</option>

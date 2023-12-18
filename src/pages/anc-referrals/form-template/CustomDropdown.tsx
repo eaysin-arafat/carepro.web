@@ -11,6 +11,7 @@ const CustomDropdown = ({
   optionOnClick,
   selectOnClick,
   data = [],
+  required,
 }) => {
   const filteredData = data.filter((level) =>
     level?.name?.toLowerCase().startsWith(inputValue.toLowerCase())
@@ -25,7 +26,12 @@ const CustomDropdown = ({
         onClick={selectOnClick}
       >
         <div className="flex items-center w-full justify-between">
-          <span className="input_label">{label}</span>
+          <div className="flex">
+            <div className="input_label"> {label}</div>
+            {required && (
+              <span className="-mt-[6px] mx-1 text-dangerColor">*</span>
+            )}
+          </div>
           <IoMdArrowDropdown size={20} className={`${open && "rotate-180"}`} />
         </div>
         <h1 className="input_label">

@@ -21,38 +21,35 @@ const ObstetricExamination = ({ toggler = () => {} }) => {
       <form>
         <div>
           <div className="flex flex-col gap-3">
-            <Input label="SFH(cm)" placeholder="Enter SFH(cm)" />
+            <Input label="SFH(cm)" required />
 
-            <Select label="Presentation" className="py-1 rounded">
+            <Select label="Presentation" required>
               <option>Cephalic</option>
               <option>Breech</option>
               <option>Undefined</option>
             </Select>
 
-            <Select label="Engaged" className="py-1 rounded">
+            <Select label="Engaged" required>
               <option>Engaged</option>
               <option>Not engaged</option>
             </Select>
 
-            <Select label="Lie" className="py-1 rounded">
+            <Select label="Lie" required>
               <option>Transverse</option>
               <option>Longitudinal</option>
               <option>Oblique</option>
               <option>Undefined</option>
             </Select>
 
-            <Select label="Fetal Heart" className="py-1 rounded">
+            <Select label="Fetal Heart" required>
               <option>FMF</option>
               <option>Heard</option>
               <option>Not heard</option>
             </Select>
 
-            <Input
-              label="Fetal Heart Rate"
-              placeholder="Enter Fetal Heart Rate"
-            />
+            <Input label="Fetal Heart Rate" required />
 
-            <Select label="Contractions" className="py-1 rounded">
+            <Select label="Contractions" required>
               <option>Regular</option>
               <option>Irregular</option>
             </Select>

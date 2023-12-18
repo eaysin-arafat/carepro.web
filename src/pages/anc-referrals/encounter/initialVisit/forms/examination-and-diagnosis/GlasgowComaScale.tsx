@@ -99,9 +99,9 @@ const GlasgowComaScale = ({ toggler = () => {} }) => {
           <div className="flex flex-col gap-3">
             <Select
               label="Eye Score"
-              className="py-1 rounded"
               value={eyeSelectedOption}
               onChange={handleEyeSelect}
+              required
             >
               {eyeScoreOption.map((eye, index) => (
                 <option key={index} value={eye.value}>
@@ -112,9 +112,9 @@ const GlasgowComaScale = ({ toggler = () => {} }) => {
 
             <Select
               label="Verbal Score"
-              className="py-1 rounded"
               value={verbalSelectedOption}
               onChange={handleVerbalSelect}
+              required
             >
               {verbalScoreOption.map((verbal, index) => (
                 <option key={index} value={verbal.value}>
@@ -125,18 +125,18 @@ const GlasgowComaScale = ({ toggler = () => {} }) => {
 
             <Select
               label="Motor Score"
-              className="py-1 rounded"
               value={motorSelectedOption}
               onChange={handleMotorSelect}
+              required
             >
               {motorScoreOption.map((motor) => (
                 <option>{motor.value}</option>
               ))}
             </Select>
 
-            <Input label="Score" type="text" readOnly value={total} />
+            <Input label="Score" type="text" readOnly value={total} required />
 
-            <Textarea label="Findings" placeholder="Enter findings" />
+            <Textarea label="Findings" placeholder="Enter findings" required />
 
             <SubmitButton
               title="Add"

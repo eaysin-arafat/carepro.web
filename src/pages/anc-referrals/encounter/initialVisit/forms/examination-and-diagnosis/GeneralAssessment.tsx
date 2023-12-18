@@ -22,13 +22,13 @@ const GeneralAssessment = ({ toggler = () => {} }) => {
       <form>
         <div>
           <div className="flex flex-col gap-3">
-            <Select label="General Condition" className="py-1 rounded">
+            <Select label="General Condition" required>
               <option>Good</option>
               <option>Stable</option>
               <option>Critical</option>
             </Select>
 
-            <FormGroup title="General Assessment" className="">
+            <FormGroup title="General Assessment">
               <Select
                 label="Pallor"
                 placeholder="Select pallor"
@@ -40,11 +40,7 @@ const GeneralAssessment = ({ toggler = () => {} }) => {
                 <option>Severe</option>
               </Select>
 
-              <Select
-                label="Edema"
-                placeholder="Select edema"
-                className="py-1 rounded"
-              >
+              <Select label="Edema" placeholder="Select edema">
                 <option>Nill</option>
                 <option>1+</option>
                 <option>2+</option>
@@ -52,7 +48,7 @@ const GeneralAssessment = ({ toggler = () => {} }) => {
                 <option>4+</option>
               </Select>
 
-              <Select label="Clubbing" className="py-1 rounded">
+              <Select label="Clubbing">
                 <option>Nill</option>
                 <option>1+</option>
                 <option>2+</option>
@@ -60,38 +56,38 @@ const GeneralAssessment = ({ toggler = () => {} }) => {
                 <option>4+</option>
               </Select>
 
-              <Select label="Jaundice" className="py-1 rounded">
+              <Select label="Jaundice">
                 <option>Present</option>
                 <option>Not Present</option>
               </Select>
 
-              <Select label="Cyanosis" className="py-1 rounded">
+              <Select label="Cyanosis">
                 <option>Present</option>
                 <option>Not Present</option>
               </Select>
 
-              <Select label="Glucose" className="py-1 rounded">
+              <Select label="Glucose">
                 <option>Yes</option>
                 <option>No</option>
               </Select>
 
-              <Select label="Scoring" className="py-1 rounded">
+              <Select label="Scoring">
                 <option>+Ve</option>
                 <option>-Ve</option>
                 <option>Indeterminant</option>
               </Select>
 
-              <Select label="Varicose Vein" className="py-1 rounded">
+              <Select label="Varicose Vein">
                 <option>Present</option>
                 <option>Not Present</option>
               </Select>
 
-              <Select label="Varicose Vein" className="py-1 rounded">
+              <Select label="Varicose Vein">
                 <option>Present</option>
                 <option>Not Present</option>
               </Select>
 
-              <Select label="Albumin" className="py-1 rounded">
+              <Select label="Albumin">
                 <option>Nil</option>
                 <option>Trance</option>
                 <option>+</option>

@@ -23,7 +23,7 @@ const CounsellingService = ({ toggler = () => {} }) => {
               <Select
                 label="Type of Counselling"
                 placeholder="Select Type of Counselling"
-                className="py-3 rounded"
+                required
               >
                 <option>EAC</option>
                 <option>Nutrition</option>
@@ -40,6 +40,7 @@ const CounsellingService = ({ toggler = () => {} }) => {
               <Input
                 label="Session Number"
                 placeholder="Enter Session Number"
+                required
               />
 
               <DatePicker
@@ -47,6 +48,7 @@ const CounsellingService = ({ toggler = () => {} }) => {
                 onChange={() => {}}
                 name="review-date"
                 placeholder="Enter Review Date"
+                required
               />
             </div>
 

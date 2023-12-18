@@ -22,14 +22,14 @@ const SystemExamination = ({ toggler = () => {} }) => {
       <form>
         <div>
           <div className="flex flex-col gap-3">
-            <Select label="System" className="py-1 rounded">
+            <Select label="System" required>
               <option>Respiratory System</option>
               <option>Gestro-Intestinal System</option>
               <option>Cardivascular System</option>
               <option>Nervous System</option>
             </Select>
 
-            <Textarea label="Note" placeholder="Comment" />
+            <Textarea label="Note" placeholder="Comment" required />
 
             <SubmitButton
               title="Add"

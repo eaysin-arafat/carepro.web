@@ -234,6 +234,7 @@ const DiagnosisMultiDependentDropdown = () => {
           optionOnClick={handleSelectOptionLevel1}
           selectOnClick={handleOpenLevel1}
           label="NTG Level 1"
+          required
         />
       </div>
 
@@ -250,6 +251,7 @@ const DiagnosisMultiDependentDropdown = () => {
           optionOnClick={handleSelectOptionLevel2}
           selectOnClick={handleOpenLevel2}
           label="NTG Level 2"
+          required
         />
       </div>
 
@@ -267,6 +269,7 @@ const DiagnosisMultiDependentDropdown = () => {
           optionOnClick={handleSelectOptionLevel3}
           selectOnClick={handleOpenLevel3}
           label="NTG Level 3"
+          required
         />
       </div>
     </Fragment>

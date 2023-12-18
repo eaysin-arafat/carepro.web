@@ -78,6 +78,7 @@ const Diagnosis = ({ toggler }) => {
                   optionOnClick={handleIcdSelectOption}
                   selectOnClick={() => setIcdOpen((prev) => !prev)}
                   label="ICD 11"
+                  required
                 />
               )}
             </CustomDependentDropdownGroup>

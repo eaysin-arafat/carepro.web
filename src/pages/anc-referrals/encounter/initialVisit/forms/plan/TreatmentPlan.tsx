@@ -17,11 +17,7 @@ const TreatmentPlan = ({ toggler = () => {} }) => {
       <form>
         <div>
           <div className="flex flex-col gap-3">
-            <Textarea
-              label="Treatment Plan"
-              placeholder="Enter Treatment Plan"
-              className="h-48"
-            />
+            <Textarea label="Treatment Plan" className="h-48" required />
 
             <div className="flex items-center justify-between">
               <h1 className="font-semibold">Suggestion: NTG</h1>
