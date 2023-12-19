@@ -40,9 +40,7 @@ function CreateUserAccount() {
 
   return (
     <div className=" px-2">
-      <h2 className="heading_2 text-center mt-8">
-        User Profile Registration
-      </h2>
+      <h2 className="heading_2 text-center mt-8">User Profile Registration</h2>
       <p className="text-center mt-2 pb-2">
         Fields marked by <span className="text-dangerColor">*</span> are
         mandatory

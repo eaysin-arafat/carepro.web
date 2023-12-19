@@ -9,7 +9,7 @@ import ClientSearch from "@/pages/client-accounts/index/ClientSearch";
 import AssignServiceQueue from "@/pages/service-point/AssignServiceQueue";
 import ServicePoints from "@/pages/service-point/ServicePoints";
 import EditAdmission from "../pages/admissions/edit/Edit";
-import AdmissionDetails from "./../pages/admissions/details/AdmissionDetails";
+import AdmissionDetails from "../pages/admissions/details/AdmissionDetails";
 
 // route paths for client pages
 export const URLClientSearch = (): string => "/client-search";

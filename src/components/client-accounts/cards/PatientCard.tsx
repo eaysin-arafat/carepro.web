@@ -101,7 +101,10 @@ const PatientCard = ({ client, className }: PatientCardProps) => {
                   title="Date of Birth"
                   value={
                     client.dob
-                      ? format(new Date(client.dob), "dd-MMM-yyyy") + " (" + getSingleYear(client.dob) + ")"
+                      ? format(new Date(client.dob), "dd-MMM-yyyy") +
+                        " (" +
+                        getSingleYear(client.dob) +
+                        ")"
                       : ""
                   }
                   icon={<MdOutlineCalendarMonth className="" />}

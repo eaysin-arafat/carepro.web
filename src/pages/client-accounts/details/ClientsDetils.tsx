@@ -90,54 +90,55 @@ const ClientDetails = ({}: Props) => {
                 editHandler={() => handleClientEdit(1)}
               >
                 <div className="md:grid md:grid-cols-2">
-                <DataRow
-                  title="Cellphone Number"
-                  data={
-                    clientObj?.cellphone &&
-                    clientObj?.cellphone != "00000000000"
-                      ? clientObj?.cellphoneCountryCode +
-                        " " +
-                        clientObj?.cellphone
-                      : ""
-                  }
-                />
-                <DataRow
-                  title="Other Cellphone Number"
-                  data={
-                    clientObj?.otherCellphone &&
-                    clientObj?.otherCellphone != "00000000000"
-                      ? clientObj?.otherCellphoneCountryCode +
-                        " " +
-                        clientObj?.otherCellphone
-                      : ""
-                  }
-                />
-                <DataRow
-                  title="Landline Number"
-                  data={
-                    clientObj?.landline && clientObj?.landline != "00000000000"
-                      ? clientObj?.landlineCountryCode +
-                        " " +
-                        clientObj?.landline
-                      : ""
-                  }
-                />
-                <DataRow title="Email" data={clientObj?.email} />
-                <DataRow
-                  title="Country of Origin"
-                  data={clientObj?.isZambianBorn ? "Zambia" : "Others"}
-                />
-                <DataRow
-                  title="House Number"
-                  data={clientObj?.householdNumber}
-                />
-                <DataRow title="Road" data={clientObj?.road} />
-                <DataRow title="Area" data={clientObj?.area} />
-                <DataRow title="Town" data={clientObj?.townName} />
-                <DataRow
-                  title="Landmarks & Direction"
-                  data={clientObj?.landmarks}
-                />
+                  <DataRow
+                    title="Cellphone Number"
+                    data={
+                      clientObj?.cellphone &&
+                      clientObj?.cellphone != "00000000000"
+                        ? clientObj?.cellphoneCountryCode +
+                          " " +
+                          clientObj?.cellphone
+                        : ""
+                    }
+                  />
+                  <DataRow
+                    title="Other Cellphone Number"
+                    data={
+                      clientObj?.otherCellphone &&
+                      clientObj?.otherCellphone != "00000000000"
+                        ? clientObj?.otherCellphoneCountryCode +
+                          " " +
+                          clientObj?.otherCellphone
+                        : ""
+                    }
+                  />
+                  <DataRow
+                    title="Landline Number"
+                    data={
+                      clientObj?.landline &&
+                      clientObj?.landline != "00000000000"
+                        ? clientObj?.landlineCountryCode +
+                          " " +
+                          clientObj?.landline
+                        : ""
+                    }
+                  />
+                  <DataRow title="Email" data={clientObj?.email} />
+                  <DataRow
+                    title="Country of Origin"
+                    data={clientObj?.isZambianBorn ? "Zambia" : "Others"}
+                  />
+                  <DataRow
+                    title="House Number"
+                    data={clientObj?.householdNumber}
+                  />
+                  <DataRow title="Road" data={clientObj?.road} />
+                  <DataRow title="Area" data={clientObj?.area} />
+                  <DataRow title="Town" data={clientObj?.townName} />
+                  <DataRow
+                    title="Landmarks & Direction"
+                    data={clientObj?.landmarks}
+                  />
                 </div>
               </Card>
 
@@ -231,10 +232,7 @@ const ClientDetails = ({}: Props) => {
                     religionsEnums[clientObj?.maritalStatus]
                   }
                 />
-                <DataRow
-                  title="Spouse"
-                  data={clientObj?.spousesLegalName}
-                />
+                <DataRow title="Spouse" data={clientObj?.spousesLegalName} />
                 <DataRow title="Last Name" data={clientObj?.spousesSurname} />
               </Card>
 
