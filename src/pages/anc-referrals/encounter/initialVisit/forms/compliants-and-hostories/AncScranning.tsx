@@ -13,103 +13,89 @@ const AncScranning = ({ toggler }) => {
     <DefaultOpenModal title="ANC Screening" isShow={true} toggler={toggler}>
       <form>
         <div>
-          <div className="flex flex-col gap-3">
-            <div className="flex gap-2 items-center justify-center">
-              <Select label="History of Bleeding" required>
-                <option value="">Yes</option>
-                <option value="">No</option>
-              </Select>
+          <div className="grid md:grid md:grid-cols-2 lg:grid lg:grid-cols-2 gap-3">
+            <Select label="History of Bleeding" required>
+              <option value="">Yes</option>
+              <option value="">No</option>
+            </Select>
 
-              <Select label="Draining" required>
-                <option value="">Yes</option>
-                <option value="">No</option>
-              </Select>
-            </div>
+            <Select label="Draining" required>
+              <option value="">Yes</option>
+              <option value="">No</option>
+            </Select>
 
-            <div className="flex gap-2">
-              <Select label="PV Mucas" required>
-                <option value="">Yes</option>
-                <option value="">No</option>
-              </Select>
-              <Select label="Contraction" required>
-                <option value="">Yes</option>
-                <option value="">No</option>
-              </Select>
-            </div>
+            <Select label="PV Mucas" required>
+              <option value="">Yes</option>
+              <option value="">No</option>
+            </Select>
+            <Select label="Contraction" required>
+              <option value="">Yes</option>
+              <option value="">No</option>
+            </Select>
 
-            <div className="flex gap-2">
-              <Select label="PV Bleeding" required>
-                <option value="">Yes</option>
-                <option value="">No</option>
-              </Select>
-              <Select label="Fetal Movements" required>
-                <option value="">Yes</option>
-                <option value="">No</option>
-              </Select>
-            </div>
+            <Select label="PV Bleeding" required>
+              <option value="">Yes</option>
+              <option value="">No</option>
+            </Select>
+            <Select label="Fetal Movements" required>
+              <option value="">Yes</option>
+              <option value="">No</option>
+            </Select>
 
-            <div className="flex gap-2">
-              <Select
-                label="Is Syhilis Test Done"
-                value={syphilisSelect}
-                onChange={(e) => setSyphilisSelect(e.target.value)}
-                required
-              >
-                <option>Yes</option>
-                <option>No</option>
-              </Select>
+            <Select
+              label="Is Syhilis Test Done"
+              value={syphilisSelect}
+              onChange={(e) => setSyphilisSelect(e.target.value)}
+              required
+            >
+              <option>Yes</option>
+              <option>No</option>
+            </Select>
 
-              <DatePicker
-                label="Syphilis Test Date"
-                disabled={syphilisSelect !== "Yes"}
-                name="syphilis-test-date"
-                required
-              />
-            </div>
+            <DatePicker
+              label="Syphilis Test Date"
+              disabled={syphilisSelect !== "Yes"}
+              name="syphilis-test-date"
+              required
+            />
 
-            <div className="flex gap-2">
-              <Select label="Syphilis Test Type" required>
-                <option value="">Yes</option>
-                <option value="">No</option>
-              </Select>
-              <Select label="Sysphilis Result" required>
-                <option value="">Yes</option>
-                <option value="">No</option>
-              </Select>
-            </div>
+            <Select label="Syphilis Test Type" required>
+              <option value="">Yes</option>
+              <option value="">No</option>
+            </Select>
+            <Select label="Sysphilis Result" required>
+              <option value="">Yes</option>
+              <option value="">No</option>
+            </Select>
 
-            <div className="flex gap-2">
-              <Select label="Is Hepatities Done?" required>
-                <option value="">Yes</option>
-                <option value="">No</option>
-              </Select>
+            <Select label="Is Hepatities Done?" required>
+              <option value="">Yes</option>
+              <option value="">No</option>
+            </Select>
 
-              <DatePicker
-                label="Hepatitis Test Date"
-                name="hepatitis-test-date"
-                required
-              />
-            </div>
+            <DatePicker
+              label="Hepatitis Test Date"
+              name="hepatitis-test-date"
+              required
+            />
 
-            <div className="flex gap-2">
-              <Select
-                label="Hepatities Test Type"
-                value={hepatitisSelect}
-                onChange={(e) => setHepatitisSelect(e.target.value)}
-                required
-              >
-                <option>Yes</option>
-                <option>No</option>
-              </Select>
-              <Select
-                label="Hepatitis Result"
-                disabled={hepatitisSelect !== "Yes"}
-                required
-              >
-                <option>Yes</option>
-                <option>No</option>
-              </Select>
-            </div>
+            <Select
+              label="Hepatities Test Type"
+              value={hepatitisSelect}
+              onChange={(e) => setHepatitisSelect(e.target.value)}
+              required
+            >
+              <option>Yes</option>
+              <option>No</option>
+            </Select>
+            <Select
+              label="Hepatitis Result"
+              disabled={hepatitisSelect !== "Yes"}
+              required
+            >
+              <option>Yes</option>
+              <option>No</option>
+            </Select>
           </div>
         </div>
 

@@ -6,41 +6,29 @@ import ComplaintsAndHistories from "../initialVisit/step/ComplaintsAndHistories.
 import GynAndObsHistories from "../initialVisit/step/GynAndObsHistories.tsx";
 import ExaminationAndDiagnosis from "../initialVisit/step/ExaminationAndDiagnosis.tsx";
 import Plan from "../initialVisit/step/Plan.tsx";
-import PatientLocator from "./step/PatientLocator.tsx";
-import PatientStatus from "./step/PatientStatus.tsx";
 
-const AncFirstTimeOnART = () => {
+const FollowUpEncounter = () => {
   const [activeStep, setActiveStep] = useState(0);
 
   const steps = [
     {
       id: 1,
-      name: "Patient Locator",
-      component: <PatientLocator />,
-    },
-    {
-      id: 2,
-      name: "Patient Status",
-      component: <PatientStatus />,
-    },
-    {
-      id: 3,
-      name: "Complaints & Histories",
+      name: "Complaint & Histories",
       component: <ComplaintsAndHistories />,
     },
     {
-      id: 4,
+      id: 2,
       name: "Gyn & Obs Histories",
       component: <GynAndObsHistories />,
     },
     {
-      id: 5,
+      id: 3,
       name: "Examination & Diagnosis",
       component: <ExaminationAndDiagnosis />,
     },
     {
-      id: 6,
-      name: "Plan",
+      id: 4,
+      name: "Treatment Plan",
       component: <Plan />,
     },
   ];
@@ -76,4 +64,4 @@ const AncFirstTimeOnART = () => {
   );
 };
 
-export default AncFirstTimeOnART;
+export default FollowUpEncounter;

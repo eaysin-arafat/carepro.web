@@ -14,6 +14,8 @@ type Props = {
   placeholder?: string;
   children?: React.ReactNode;
   isHideSelect?: boolean;
+  parentStyle?: string;
+  labelStyle?: string;
 };
 
 function Select({
@@ -29,11 +31,15 @@ function Select({
   className,
   placeholder,
   children,
+  parentStyle,
+  labelStyle,
 }: Props) {
   // console.log({ value });
   return (
-    <div className="flex flex-col w-full items-start justify-start gap-[6px]">
-      <div className="flex">
+    <div
+      className={`flex flex-col w-full items-start justify-start gap-[6px] ${parentStyle}`}
+    >
+      <div className={`flex ${labelStyle}`}>
         <div className="input_label"> {label}</div>
         {required && <span className="-mt-[6px] mx-1 text-dangerColor">*</span>}
       </div>

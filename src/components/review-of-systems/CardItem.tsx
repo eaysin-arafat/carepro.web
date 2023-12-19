@@ -11,7 +11,7 @@ const ReviewOfSystemCardItem = () => {
           <span> Respiratory system </span>
         </p>
         <p className="font-poppins flex gap-2">
-          <span className="font-semibold">Note :</span>
+          <span className="font-semibold whitespace-nowrap">Note :</span>
           <span> heart is not working well</span>
         </p>
       </div>

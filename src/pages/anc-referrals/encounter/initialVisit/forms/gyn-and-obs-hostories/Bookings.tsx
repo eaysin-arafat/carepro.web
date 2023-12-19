@@ -6,6 +6,7 @@ import Select from "@/components/core/form-elements/Select";
 import DefaultOpenModal from "@/components/core/modal/DefaultOpenModal";
 import PastRecordContainers from "@/components/past-record-containers/PastRecordContainers";
 import { useReadChiefComplaintByClientQuery } from "@/features/chief-complaint/chief-complaint-api";
+import Section from "@/pages/anc-referrals/form-template/Section";
 import PastEncounters from "@/pages/chief-complaints/create/PastEncounters";
 import { cn } from "@/utilities/cn";
 import React, { useState } from "react";
@@ -118,75 +119,77 @@ const Bookings = ({ toggler = () => {} }) => {
     <DefaultOpenModal isShow={true} title="Bookings" toggler={toggler}>
       <form>
         <div>
-          <div className="flex flex-col gap-3">
-            <div className="flex gap-2 items-center justify-center">
-              <Select
-                label="Province"
-                value={province}
-                onChange={handleProvince}
-                required
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+            <Select
+              label="Province"
+              value={province}
+              onChange={handleProvince}
+              required
+            >
+              {provinceData.map((province) => (
+                <option value={province.name} key={province.id}>
+                  {province.name}
+                </option>
+              ))}
+            </Select>
+
+            <Select
+              label="District"
+              selectShow="Please Select"
+              value={district}
+              onChange={handleDistrict}
+              required
+            >
+              {selectDistrict.map((distr, index) => (
+                <option value={distr.name} key={index}>
+                  {distr.name}
+                </option>
+              ))}
+            </Select>
+
+            <Select
+              label="Partner Blood Group"
+              value={facility}
+              onChange={(e) => setFasility(e.target.value)}
+              required
+            >
+              {selectFacility.map((facility, index) => (
+                <option value={facility} key={index}>
+                  {facility}
+                </option>
+              ))}
+            </Select>
+
+            <DatePicker
+              label="Pregnancy confirmed date"
+              onChange={() => {}}
+              name="pregnancy-confirm-date"
+              placeholder="Enter pregnancy confirmed date"
+              required
+            />
+
+            <DatePicker
+              label="Date of quickening?"
+              onChange={() => {}}
+              name="quickening-date"
+              placeholder="Enter date of quickening"
+              required
+            />
+
+            <Input
+              label="Quickening Weeks?"
+              placeholder="Enter Quickening Weeks"
+            />
+
+            <Section
+              title="How Was The Pregnancy Confirmed"
+              className="col-span-3"
+            >
+              <div
+                className={cn(
+                  `grid gap-3 mt-2 grid-cols-2 md:grid-cols-3 lg:grid-cols-4`
+                )}
               >
-                {provinceData.map((province) => (
-                  <option value={province.name} key={province.id}>
-                    {province.name}
-                  </option>
-                ))}
-              </Select>
-
-              <Select
-                label="District"
-                selectShow="Please Select"
-                value={district}
-                onChange={handleDistrict}
-                required
-              >
-                {selectDistrict.map((distr, index) => (
-                  <option value={distr.name} key={index}>
-                    {distr.name}
-                  </option>
-                ))}
-              </Select>
-
-              <Select
-                label="Partner Blood Group"
-                value={facility}
-                onChange={(e) => setFasility(e.target.value)}
-                required
-              >
-                {selectFacility.map((facility, index) => (
-                  <option value={facility} key={index}>
-                    {facility}
-                  </option>
-                ))}
-              </Select>
-            </div>
-
-            <div className="flex gap-2 items-center justify-center">
-              <DatePicker
-                label="Pregnancy confirmed date"
-                onChange={() => {}}
-                name="pregnancy-confirm-date"
-                placeholder="Enter pregnancy confirmed date"
-                required
-              />
-
-              <DatePicker
-                label="Date of quickening?"
-                onChange={() => {}}
-                name="quickening-date"
-                placeholder="Enter date of quickening"
-                required
-              />
-
-              <Input
-                label="Quickening Weeks?"
-                placeholder="Enter Quickening Weeks"
-              />
-            </div>
-
-            <div>
-              <div className="input_label">How was the pregnancy confirmed</div>
-              <div className={cn(`grid gap-3 mt-2 grid-cols-7`)}>
                 {Object.keys(historyData).map((item, index) => (
                   <SelectableButton
                     key={index}
@@ -196,7 +199,7 @@ const Bookings = ({ toggler = () => {} }) => {
                   />
                 ))}
               </div>
-            </div>
+            </Section>
           </div>
           <hr className="my-6" />
 

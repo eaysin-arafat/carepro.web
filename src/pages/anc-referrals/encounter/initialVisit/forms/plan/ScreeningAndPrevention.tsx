@@ -20,37 +20,33 @@ const ScreeningAndPrevention = ({ toggler = () => {} }) => {
     >
       <form>
         <div>
-          <div className="flex flex-col gap-3">
-            <div className="flex gap-2 items-center justify-center">
-              <Select
-                label="Malaria Dose"
-                placeholder="Select Malaria Dose"
-                required
-              >
-                <option>ITN issued</option>
-                <option>ITN used</option>
-                <option>SP DOT given</option>
-              </Select>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-3">
+            <Select
+              label="Malaria Dose"
+              placeholder="Select Malaria Dose"
+              required
+            >
+              <option>ITN issued</option>
+              <option>ITN used</option>
+              <option>SP DOT given</option>
+            </Select>
 
-              <Input
-                label="Malaria Does No."
-                placeholder="Enter Malaria Dose No."
-              />
-            </div>
+            <Input
+              label="Malaria Does No."
+              placeholder="Enter Malaria Dose No."
+            />
 
-            <div className="flex gap-2 items-center justify-center">
-              <Select label="Tetanus" required>
-                <option>Pregnancy fully TT protected</option>
-                <option>TT does given</option>
-              </Select>
+            <Select label="Tetanus" required>
+              <option>Pregnancy fully TT protected</option>
+              <option>TT does given</option>
+            </Select>
 
-              <Input
-                label="Tetanus Dose No."
-                placeholder="Enter Tetanus Dose No."
-              />
-            </div>
+            <Input
+              label="Tetanus Dose No."
+              placeholder="Enter Tetanus Dose No."
+            />
 
-            <div className="flex gap-2 items-center justify-center">
+            <div className="grid grid-cols-1  md:grid-cols-3 lg:grid-cols-3 gap-3 md:col-span-2">
               <Select label="Anemia svreening" required>
                 <option>Screened</option>
                 <option>Iron given</option>

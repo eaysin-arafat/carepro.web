@@ -7,7 +7,7 @@ import Textarea from "@/components/core/form-elements/Textarea";
 import DefaultOpenModal from "@/components/core/modal/DefaultOpenModal";
 import PastRecordContainers from "@/components/past-record-containers/PastRecordContainers";
 import { useReadChiefComplaintByClientQuery } from "@/features/chief-complaint/chief-complaint-api";
-import FormGroup from "@/pages/anc-referrals/form-template/FormGroup";
+import Section from "@/pages/anc-referrals/form-template/Section";
 import PastEncounters from "@/pages/chief-complaints/create/PastEncounters";
 import { cn } from "@/utilities/cn";
 import React, { useState } from "react";
@@ -81,7 +81,7 @@ const GynAndObs = ({ toggler = () => {} }) => {
       <form>
         <div>
           <div className="flex flex-col gap-3">
-            <div>
+            <Section title="Menstrual History">
               <Textarea
                 label="Menstrual History"
                 placeholder="Menstrual History"
@@ -91,10 +91,10 @@ const GynAndObs = ({ toggler = () => {} }) => {
                 <b>Note :</b> Please document Menarche, Menopause, Cycle
                 regularity, Cycle duration, Menstrual heaviness.
               </p>
-            </div>
+            </Section>
 
-            <FormGroup className="" title="Obstetrics History">
-              <div className="flex gap-2 items-center justify-center">
+            <Section title="Obstetrics History" className="">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
                 <DatePicker
                   label="Menstrul History"
                   onChange={() => {}}
@@ -114,11 +114,20 @@ const GynAndObs = ({ toggler = () => {} }) => {
                 />
 
                 <Input label="EDD" placeholder="Enter EDD" />
-              </div>
-            </FormGroup>
 
-            <FormGroup title="Are you breastfeeding">
-              <div className="flex gap-2 items-center justify-center">
+                <div className="md:col-span-2 lg:col-span-4">
+                  <Textarea label="Obstetrics History" />
+                  <p className="note">
+                    <b>Note :</b> Please document Parity, Gravida, Number of
+                    children alive and deseased, Breastfeeding status. If has
+                    Breastfeeding child then HIV status of the child.
+                  </p>
+                </div>
+              </div>
+            </Section>
+
+            <Section title="Are you breastfeeding">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-3">
                 <Select
                   label="Are you breastfeeding?"
                   value={breastfeedingSelect}
@@ -139,8 +148,6 @@ const GynAndObs = ({ toggler = () => {} }) => {
                   <option>No</option>
                   <option>Unknown</option>
                 </Select>
-              </div>
-              <div className="flex gap-2 items-center justify-center">
                 <Select label="Is Screened For Syphilis?">
                   <option value="">Yes</option>
                   <option value="">No</option>
@@ -152,11 +159,14 @@ const GynAndObs = ({ toggler = () => {} }) => {
                   <option value="">No</option>
                   <option value="">Unknown</option>
                 </Select>
-              </div>
-              <Textarea label="Note" placeholder="Enter Note" />
-            </FormGroup>
 
-            <FormGroup title="Contraceptive History" className="">
+                <div className="md:col-span-2">
+                  <Textarea label="Note" placeholder="Enter Note" />
+                </div>
+              </div>
+            </Section>
+
+            <Section title="Contraceptive History" className="">
               <div className={cn(`flex flex-wrap gap-3 mt-2`)}>
                 {Object.keys(historyData).map((item, index) => (
                   <SelectableButton
@@ -167,10 +177,10 @@ const GynAndObs = ({ toggler = () => {} }) => {
                   />
                 ))}
               </div>
-            </FormGroup>
+            </Section>
 
-            <FormGroup title="Cervical Cancer History" className="">
-              <div className="flex gap-2 items-center justify-center">
+            <Section title="Cervical Cancer History" className="">
+              <div className="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 gap-3">
                 <Select
                   label="Have You Screened for CaCx?"
                   value={caCxSelect}
@@ -190,8 +200,6 @@ const GynAndObs = ({ toggler = () => {} }) => {
                   placeholder="Enter When last screened"
                   disabled={caCxSelect !== "Yes"}
                 />
-              </div>
-              <div className="flex gap-2 items-center justify-center">
                 <Select
                   label="Result"
                   disabled={caCxSelect !== "Yes"}
@@ -214,7 +222,7 @@ const GynAndObs = ({ toggler = () => {} }) => {
                   <option>VIA</option>
                 </Select>
               </div>
-            </FormGroup>
+            </Section>
           </div>
           <hr className="my-6" />
 

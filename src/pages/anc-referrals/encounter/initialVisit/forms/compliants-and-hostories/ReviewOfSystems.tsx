@@ -4,6 +4,8 @@ import Select from "@/components/core/form-elements/Select";
 import Textarea from "@/components/core/form-elements/Textarea";
 import DefaultOpenModal from "@/components/core/modal/DefaultOpenModal";
 import PastRecordContainers from "@/components/past-record-containers/PastRecordContainers";
+import ReviewOfSystemCardItem from "@/components/review-of-systems/CardItem";
+import ReviewOfSystemCardGroup from "@/pages/anc-referrals/form-template/ReviewOfSystemCardGroup";
 import { PlusCircle } from "react-feather";
 
 const ReviewOfSystems = ({ toggler = () => {} }) => {
@@ -29,18 +31,13 @@ const ReviewOfSystems = ({ toggler = () => {} }) => {
               icon={<PlusCircle size={14} />}
               className="py-1.5 text-base w-[fit-content] whitespace-nowrap gap-2"
             />
-            <div>
-              <div className="grid grid-cols-2 my-2">
-                <p className="text-xs font-semibold">Physical System</p>
-                <p className="text-xs font-semibold">Note</p>
-              </div>
-              <hr />
 
-              <div className="grid grid-cols-2 my-2">
-                <p className="text-xs font-semibold"></p>
-                <p className="text-xs font-semibold"></p>
-              </div>
-            </div>
+            <ReviewOfSystemCardGroup>
+              <ReviewOfSystemCardItem />
+              <ReviewOfSystemCardItem />
+              <ReviewOfSystemCardItem />
+              <ReviewOfSystemCardItem />
+            </ReviewOfSystemCardGroup>
           </div>
         </div>
         <hr className="my-6" />

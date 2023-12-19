@@ -3,7 +3,7 @@ import SelectableButton from "@/components/core/buttons/SelectableButton";
 import Select from "@/components/core/form-elements/Select";
 import DefaultOpenModal from "@/components/core/modal/DefaultOpenModal";
 import PastRecordContainers from "@/components/past-record-containers/PastRecordContainers";
-import FormGroup from "@/pages/anc-referrals/form-template/FormGroup";
+import Section from "@/pages/anc-referrals/form-template/Section";
 import { cn } from "@/utilities/cn";
 import React from "react";
 
@@ -59,9 +59,13 @@ const TBConstitutionalSymptoms = ({ toggler = () => {} }) => {
     >
       <form>
         <div className="flex flex-col gap-6">
-          <FormGroup title="TB Symptoms">
+          <Section title="TB Symtoms">
             <div>
-              <div className={cn(`grid gap-3 mt-2 grid-cols-7`)}>
+              <div
+                className={cn(
+                  `grid grid-cols-2 md:grid-cols-5 lg:grid-cols-7 gap-3 mt-2`
+                )}
+              >
                 {Object.keys(data).map((item, index) => (
                   <SelectableButton
                     key={index}
@@ -74,9 +78,12 @@ const TBConstitutionalSymptoms = ({ toggler = () => {} }) => {
                 ))}
               </div>
             </div>
-          </FormGroup>
+          </Section>
 
-          <FormGroup title="Constitutional Symptoms">
+          <Section
+            title="Constitutional Symptoms
+"
+          >
             <Select
               label="Contitutional Symptom"
               value={selectedOption}
@@ -89,7 +96,11 @@ const TBConstitutionalSymptoms = ({ toggler = () => {} }) => {
               <option value="Baby ache">Baby ache</option>
             </Select>
             {selectedOption === "Constitutional Smptoms" ? (
-              <div className={cn(`grid gap-3 mt-2 grid-cols-7`)}>
+              <div
+                className={cn(
+                  `grid grid-cols-2 md:grid-cols-5 lg:grid-cols-7 gap-3 mt-2`
+                )}
+              >
                 {Object.keys(ConstitutionalSymptoms).map((item, index) => (
                   <SelectableButton
                     key={index}
@@ -102,7 +113,11 @@ const TBConstitutionalSymptoms = ({ toggler = () => {} }) => {
                 ))}
               </div>
             ) : (
-              <div className={cn(`grid gap-3 mt-2 grid-cols-5`)}>
+              <div
+                className={cn(
+                  `grid grid-cols-2 md:grid-cols-5 lg:grid-cols-7 gap-3 mt-2`
+                )}
+              >
                 {Object.keys(babyAche).map((item, index) => (
                   <SelectableButton
                     key={index}
@@ -115,7 +130,7 @@ const TBConstitutionalSymptoms = ({ toggler = () => {} }) => {
                 ))}
               </div>
             )}
-          </FormGroup>
+          </Section>
         </div>
         <hr className="my-6" />
 

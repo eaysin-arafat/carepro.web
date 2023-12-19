@@ -1,34 +1,46 @@
 import PastRecordList from "@/components/shared/past-record-list/PastRecordList";
 import FormLayout from "@/layout/FormLayout";
-import ComplaintsAndHistories from "./step/ComplaintsAndHistories.tsx";
-import GynAndObsHistories from "./step/GynAndObsHistories.tsx";
 import { useState } from "react";
-import ExaminationAndDiagnosis from "./step/ExaminationAndDiagnosis.tsx";
-import Plan from "./step/Plan.tsx";
 import ModuleStepping from "../../form-template/ModuleStepping.tsx";
+import ComplaintsAndHistories from "../initialVisit/step/ComplaintsAndHistories.tsx";
+import GynAndObsHistories from "../initialVisit/step/GynAndObsHistories.tsx";
+import ExaminationAndDiagnosis from "../initialVisit/step/ExaminationAndDiagnosis.tsx";
+import Plan from "../initialVisit/step/Plan.tsx";
+import InitialAlreadyPatientLocator from "../initial-already-on-art/step/PatientLocator.tsx";
+import InitialAlreadyPatientStatus from "../initial-already-on-art/step/PatientStatus.tsx";
 
-const InitialVisitEncounter = () => {
+const FollowUpPMTCTEncounter = () => {
   const [activeStep, setActiveStep] = useState(0);
 
   const steps = [
     {
       id: 1,
-      name: "Complaint & Histories",
-      component: <ComplaintsAndHistories />,
+      name: "Patient Locator",
+      component: <InitialAlreadyPatientLocator />,
     },
     {
       id: 2,
+      name: "Patient Status",
+      component: <InitialAlreadyPatientStatus />,
+    },
+    {
+      id: 3,
+      name: "Complaints & Histories",
+      component: <ComplaintsAndHistories />,
+    },
+    {
+      id: 4,
       name: "Gyn & Obs Histories",
       component: <GynAndObsHistories />,
     },
     {
-      id: 3,
+      id: 5,
       name: "Examination & Diagnosis",
       component: <ExaminationAndDiagnosis />,
     },
     {
-      id: 4,
-      name: "Treatment Plan",
+      id: 6,
+      name: "Plan",
       component: <Plan />,
     },
   ];
@@ -64,4 +76,4 @@ const InitialVisitEncounter = () => {
   );
 };
 
-export default InitialVisitEncounter;
+export default FollowUpPMTCTEncounter;

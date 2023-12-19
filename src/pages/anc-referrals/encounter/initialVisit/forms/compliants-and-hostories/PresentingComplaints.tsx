@@ -75,9 +75,15 @@ const PresentingComplaints = ({ toggler }) => {
 
           <FormGroup title="HIV Risk Screening">
             {hivRiskScanningArr.map((text, index) => (
-              <Select key={index} label={text} required>
-                <option value="">Yes</option>
-                <option value="">No</option>
+              <Select
+                key={index}
+                label={text}
+                required
+                parentStyle="grid justify-stretch md:grid-cols-5 lg:grid-cols-5"
+                labelStyle="md:col-span-4"
+              >
+                <option>Yes</option>
+                <option>No</option>
               </Select>
             ))}
           </FormGroup>

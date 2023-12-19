@@ -18,41 +18,35 @@ const CounsellingService = ({ toggler = () => {} }) => {
     <DefaultOpenModal isShow={true} title="Counselling" toggler={toggler}>
       <form>
         <div>
-          <div className="flex flex-col gap-3">
-            <div className="flex gap-2 items-center justify-center">
-              <Select
-                label="Type of Counselling"
-                placeholder="Select Type of Counselling"
-                required
-              >
-                <option>EAC</option>
-                <option>Nutrition</option>
-                <option>Other</option>
-              </Select>
-
-              <Input
-                label="Other Type of Counselling"
-                placeholder="Enter Other Type of Counselling"
-              />
-            </div>
-
-            <div className="flex gap-2 items-center justify-center">
-              <Input
-                label="Session Number"
-                placeholder="Enter Session Number"
-                required
-              />
-
-              <DatePicker
-                label="Review Date"
-                onChange={() => {}}
-                name="review-date"
-                placeholder="Enter Review Date"
-                required
-              />
-            </div>
-
-            <Textarea label="Advice Given" placeholder="Enter Advice Given" />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-3">
+            <Select
+              label="Type of Counselling"
+              placeholder="Select Type of Counselling"
+              required
+            >
+              <option>EAC</option>
+              <option>Nutrition</option>
+              <option>Other</option>
+            </Select>
+            <Input
+              label="Other Type of Counselling"
+              placeholder="Enter Other Type of Counselling"
+            />
+            <Input
+              label="Session Number"
+              placeholder="Enter Session Number"
+              required
+            />
+            <DatePicker
+              label="Review Date"
+              onChange={() => {}}
+              name="review-date"
+              placeholder="Enter Review Date"
+              required
+            />
+            <div className="md:col-span-2 lg:col-span-2">
+              <Textarea label="Advice Given" placeholder="Enter Advice Given" />
+            </div>{" "}
           </div>
           <hr className="my-6" />
 

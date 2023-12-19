@@ -3,6 +3,8 @@ import SubmitButton from "@/components/core/buttons/SubmitButton";
 import Select from "@/components/core/form-elements/Select";
 import DefaultOpenModal from "@/components/core/modal/DefaultOpenModal";
 import PastRecordContainers from "@/components/past-record-containers/PastRecordContainers";
+import ReviewOfSystemCardItem from "@/components/review-of-systems/CardItem";
+import ReviewOfSystemCardGroup from "@/pages/anc-referrals/form-template/ReviewOfSystemCardGroup";
 import { useState } from "react";
 import { PlusCircle } from "react-feather";
 
@@ -23,7 +25,7 @@ const Allergies = ({ toggler = () => {} }) => {
       <form>
         <div>
           <div className="flex flex-col gap-3">
-            <div className="flex gap-2 items-center justify-center">
+            <div className="flex flex-col md:flex-row lg:flex-row gap-2 items-center justify-center">
               <Select
                 label="Allergies"
                 onChange={handleAllergiesChange}
@@ -62,7 +64,7 @@ const Allergies = ({ toggler = () => {} }) => {
               </Select>
               <p className="note">
                 <b>Note</b> : If Patient has <b>Drug Allergy</b> then select the
-                <b>Drug Type</b>
+                <b> Drug Type</b>
               </p>
             </div>
 
@@ -71,20 +73,12 @@ const Allergies = ({ toggler = () => {} }) => {
               icon={<PlusCircle size={14} />}
               className="py-1.5 text-base w-[fit-content] whitespace-nowrap gap-2"
             />
-            <div>
-              <div className="grid grid-cols-3 my-2">
-                <p className="text-xs font-semibold">Allergy Name</p>
-                <p className="text-xs font-semibold">Drug Type</p>
-                <p className="text-xs font-semibold">Severity Name</p>
-              </div>
-              <hr />
-
-              <div className="grid grid-cols-2 my-2">
-                <p className="text-xs font-semibold"></p>
-                <p className="text-xs font-semibold"></p>
-                <p className="text-xs font-semibold"></p>
-              </div>
-            </div>
+            <ReviewOfSystemCardGroup>
+              <ReviewOfSystemCardItem />
+              <ReviewOfSystemCardItem />
+              <ReviewOfSystemCardItem />
+              <ReviewOfSystemCardItem />
+            </ReviewOfSystemCardGroup>
           </div>
         </div>
         <hr className="my-6" />

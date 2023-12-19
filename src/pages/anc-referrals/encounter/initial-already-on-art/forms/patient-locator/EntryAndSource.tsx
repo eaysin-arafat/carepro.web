@@ -1,11 +1,10 @@
 import CancelAndAddButton from "@/components/core/buttons/CancelAndAddButton";
 import Select from "@/components/core/form-elements/Select";
 import DefaultOpenModal from "@/components/core/modal/DefaultOpenModal";
-import DataRow from "@/components/core/table/DataRow";
 import PastRecordContainers from "@/components/past-record-containers/PastRecordContainers";
 import { useReadChiefComplaintByClientQuery } from "@/features/chief-complaint/chief-complaint-api";
 import FormDataRow from "@/pages/anc-referrals/form-template/FormDataRow";
-import FormGroup from "@/pages/anc-referrals/form-template/FormGroup";
+import Section from "@/pages/anc-referrals/form-template/Section";
 import PastEncounters from "@/pages/chief-complaints/create/PastEncounters";
 import { useState } from "react";
 import { Loader } from "react-feather";
@@ -29,15 +28,16 @@ const EntryAndSource = ({ toggler = () => {} }) => {
       <form>
         <div>
           <div className="flex flex-col gap-3">
-            <Select
-              label="Type of entry"
-              value={typeValue}
-              onChange={handleSelect}
-            >
-              <option>Transfer in</option>
-              <option>Silent transfer</option>
-            </Select>
-
+            <Section title="Type of Entry">
+              <Select
+                label="Type of entry"
+                value={typeValue}
+                onChange={handleSelect}
+              >
+                <option>Transfer in</option>
+                <option>Silent transfer</option>
+              </Select>
+            </Section>
             {/* <div>
               <h1 className="input-group-title my-2 pb-1 border-b-[3px] border-solid border-borderColor dark:border-[#6B7280]">
                 Contact Information
@@ -57,22 +57,24 @@ const EntryAndSource = ({ toggler = () => {} }) => {
             <FormDataRow />
 
             {activeSelect && (
-              <FormGroup title="Source of Client">
-                <Select label="Province">
-                  <option>Transfer in</option>
-                  <option>Silent transfer</option>
-                </Select>
+              <Section title="Source of Client">
+                <div className="grid grid-cols-1 gap-3">
+                  <Select label="Province">
+                    <option>Transfer in</option>
+                    <option>Silent transfer</option>
+                  </Select>
 
-                <Select label="District">
-                  <option>Transfer in</option>
-                  <option>Silent transfer</option>
-                </Select>
+                  <Select label="District">
+                    <option>Transfer in</option>
+                    <option>Silent transfer</option>
+                  </Select>
 
-                <Select label="Facility">
-                  <option>Transfer in</option>
-                  <option>Silent transfer</option>
-                </Select>
-              </FormGroup>
+                  <Select label="Facility">
+                    <option>Transfer in</option>
+                    <option>Silent transfer</option>
+                  </Select>
+                </div>
+              </Section>
             )}
           </div>
           <hr className="my-6" />

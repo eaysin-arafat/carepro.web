@@ -51,43 +51,43 @@ const HistoryOfBloodTransfusions = ({ toggler = () => {} }) => {
     >
       <form>
         <div>
-          <div className="flex flex-col gap-3">
-            <div className="flex gap-2 items-center justify-center">
-              <Input label="Number of Units" required />
+          <div className="grid items-center  md:grid-cols-2 lg:grid-cols-2 gap-3">
+            <Input label="Number of Units" required />
 
-              <Select label="Blood Group" required>
-                <option value="">A +ive</option>
-                <option value="">A -ive</option>
-                <option value="">B +ive</option>
-                <option value="">B -ive</option>
-                <option value="">AB +ive</option>
-                <option value="">AB -ive</option>
-                <option value="">O +ive</option>
-                <option value="">O -ive</option>
-              </Select>
-            </div>
+            <Select label="Blood Group" required>
+              <option value="">A +ive</option>
+              <option value="">A -ive</option>
+              <option value="">B +ive</option>
+              <option value="">B -ive</option>
+              <option value="">AB +ive</option>
+              <option value="">AB -ive</option>
+              <option value="">O +ive</option>
+              <option value="">O -ive</option>
+            </Select>
 
-            <div className="flex gap-2 items-center justify-center">
-              <Select label="Partner Blood Group">
-                <option value="">A +ive</option>
-                <option value="">A -ive</option>
-                <option value="">B +ive</option>
-                <option value="">B -ive</option>
-                <option value="">AB +ive</option>
-                <option value="">AB -ive</option>
-                <option value="">O +ive</option>
-                <option value="">O -ive</option>
-              </Select>
+            <Select label="Partner Blood Group">
+              <option value="">A +ive</option>
+              <option value="">A -ive</option>
+              <option value="">B +ive</option>
+              <option value="">B -ive</option>
+              <option value="">AB +ive</option>
+              <option value="">AB -ive</option>
+              <option value="">O +ive</option>
+              <option value="">O -ive</option>
+            </Select>
 
-              <Select label="RH Sensitivity">
-                <option value="">Rhesus sensitized</option>
-                <option value="">Rhesus non sensitized</option>
-              </Select>
-            </div>
+            <Select label="RH Sensitivity">
+              <option value="">Rhesus sensitized</option>
+              <option value="">Rhesus non sensitized</option>
+            </Select>
 
-            <div>
+            <div className="col-span-2">
               <div className="input_label">Prior Sensitization</div>
-              <div className={cn(`grid gap-3 mt-2 grid-cols-7`)}>
+              <div
+                className={cn(
+                  `mt-2 grid grid-cols-3 md:grid-cols-5 lg:grid-cols-7 gap-3 `
+                )}
+              >
                 {Object.keys(historyData).map((item, index) => (
                   <SelectableButton
                     key={index}

@@ -4,7 +4,9 @@ import Select from "@/components/core/form-elements/Select";
 import Textarea from "@/components/core/form-elements/Textarea";
 import DefaultOpenModal from "@/components/core/modal/DefaultOpenModal";
 import PastRecordContainers from "@/components/past-record-containers/PastRecordContainers";
+import ReviewOfSystemCardItem from "@/components/review-of-systems/CardItem";
 import { useReadChiefComplaintByClientQuery } from "@/features/chief-complaint/chief-complaint-api";
+import ReviewOfSystemCardGroup from "@/pages/anc-referrals/form-template/ReviewOfSystemCardGroup";
 import PastEncounters from "@/pages/chief-complaints/create/PastEncounters";
 import { Loader, PlusCircle } from "react-feather";
 
@@ -36,22 +38,13 @@ const SystemExamination = ({ toggler = () => {} }) => {
               icon={<PlusCircle size={14} />}
               className="py-1.5 text-base w-[fit-content] whitespace-nowrap gap-2"
             />
-            <div>
-              <div className="grid grid-cols-4 gap-1 my-2">
-                <p className="form-submitted-data-list">Physical System</p>
-                <p className="form-submitted-data-list">Note</p>
-                <p className="form-submitted-data-list"></p>
-                <p className="form-submitted-data-list"></p>
-              </div>
-              <hr />
 
-              <div className="grid grid-cols-4 my-2">
-                <p className="form-submitted-data-list"></p>
-                <p className="form-submitted-data-list"></p>
-                <p className="form-submitted-data-list"></p>
-                <p className="form-submitted-data-list"></p>
-              </div>
-            </div>
+            <ReviewOfSystemCardGroup>
+              <ReviewOfSystemCardItem />
+              <ReviewOfSystemCardItem />
+              <ReviewOfSystemCardItem />
+              <ReviewOfSystemCardItem />
+            </ReviewOfSystemCardGroup>
           </div>
           <hr className="my-6" />
 

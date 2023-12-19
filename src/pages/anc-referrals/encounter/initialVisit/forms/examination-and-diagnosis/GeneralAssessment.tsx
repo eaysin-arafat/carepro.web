@@ -4,7 +4,7 @@ import Select from "@/components/core/form-elements/Select";
 import DefaultOpenModal from "@/components/core/modal/DefaultOpenModal";
 import PastRecordContainers from "@/components/past-record-containers/PastRecordContainers";
 import { useReadChiefComplaintByClientQuery } from "@/features/chief-complaint/chief-complaint-api";
-import FormGroup from "@/pages/anc-referrals/form-template/FormGroup";
+import Section from "@/pages/anc-referrals/form-template/Section";
 import PastEncounters from "@/pages/chief-complaints/create/PastEncounters";
 import { Loader } from "react-feather";
 
@@ -16,19 +16,21 @@ const GeneralAssessment = ({ toggler = () => {} }) => {
   return (
     <DefaultOpenModal
       isShow={true}
-      title="Physical Examination"
+      title="General Assessment"
       toggler={toggler}
     >
       <form>
         <div>
           <div className="flex flex-col gap-3">
-            <Select label="General Condition" required>
-              <option>Good</option>
-              <option>Stable</option>
-              <option>Critical</option>
-            </Select>
+            <Section title="Physical Examination">
+              <Select label="General Condition" required>
+                <option>Good</option>
+                <option>Stable</option>
+                <option>Critical</option>
+              </Select>
+            </Section>
 
-            <FormGroup title="General Assessment">
+            <Section title="General Assessment">
               <Select
                 label="Pallor"
                 placeholder="Select pallor"
@@ -95,7 +97,7 @@ const GeneralAssessment = ({ toggler = () => {} }) => {
                 <option>+++</option>
                 <option>++++</option>
               </Select>
-            </FormGroup>
+            </Section>
           </div>
           <hr className="my-6" />
 

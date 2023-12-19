@@ -11,6 +11,9 @@ import { BiPlusCircle } from "react-icons/bi";
 import DiagnosisMultiDependentDropdown from "./DiagnosisMultiDependentDropdown";
 import CustomDependentDropdownGroup from "@/pages/anc-referrals/form-template/CustomDependentDropdownGroup";
 import CustomDropdown from "@/pages/anc-referrals/form-template/CustomDropdown";
+import Section from "@/pages/anc-referrals/form-template/Section";
+import ReviewOfSystemCardGroup from "@/pages/anc-referrals/form-template/ReviewOfSystemCardGroup";
+import ReviewOfSystemCardItem from "@/components/review-of-systems/CardItem";
 
 const cronicICDDropdownData = [
   { id: 1, name: "Neoplasms" },
@@ -37,74 +40,64 @@ const Diagnosis = ({ toggler }) => {
   };
 
   return (
-    <DefaultOpenModal
-      title="Chronic / Non Chronic Conditions"
-      isShow={true}
-      toggler={toggler}
-    >
+    <DefaultOpenModal title="Diagnosis" isShow={true} toggler={toggler}>
       <form>
         <div>
           <div className="flex flex-col justify-center gap-6">
-            <div className="flex gap-2 items-center justify-center">
-              <Radio
-                label="National Treatment Guideline"
-                name="chronicF"
-                checked={selectedOption === "National Treatment Guideline"}
-                onChange={() =>
-                  setSelectedOption("National Treatment Guideline")
-                }
-              />
-              <Radio
-                label="ICD 11"
-                name="chronicF"
-                checked={Boolean(selectedOption === "ICD 11")}
-                onChange={() => setSelectedOption("ICD 11")}
-              />
-            </div>
-
-            <CustomDependentDropdownGroup>
-              {selectedOption === "National Treatment Guideline" && (
-                <DiagnosisMultiDependentDropdown />
-              )}
-
-              {selectedOption === "ICD 11" && (
-                <CustomDropdown
-                  data={cronicICDDropdownData}
-                  selected={icdSelectedLevelInput}
-                  setSelected={setIcdSelectedLevelInput}
-                  inputValue={icdInputValue}
-                  setInputValue={setIcdInputValue}
-                  open={icdOpen}
-                  optionOnClick={handleIcdSelectOption}
-                  selectOnClick={() => setIcdOpen((prev) => !prev)}
-                  label="ICD 11"
-                  required
+            <Section title="Diagnosis">
+              <div className="flex gap-2 items-center justify-center">
+                <Radio
+                  label="National Treatment Guideline"
+                  name="chronicF"
+                  checked={selectedOption === "National Treatment Guideline"}
+                  onChange={() =>
+                    setSelectedOption("National Treatment Guideline")
+                  }
                 />
-              )}
-            </CustomDependentDropdownGroup>
-
-            <SubmitButton
-              title="Add"
-              icon={<BiPlusCircle size={14} />}
-              className="py-1.5 text-base w-[fit-content] whitespace-nowrap gap-2"
-            />
-
-            <div>
-              <div className="grid grid-cols-4 my-2">
-                <p className="text-xs font-semibold">NTG</p>
-                <p className="text-xs font-semibold">ICD</p>
-                <p className="text-xs font-semibold"></p>
-                <p className="text-xs font-semibold"></p>
+                <Radio
+                  label="ICD 11"
+                  name="chronicF"
+                  checked={Boolean(selectedOption === "ICD 11")}
+                  onChange={() => setSelectedOption("ICD 11")}
+                />
               </div>
-              <hr />
 
-              <div className="grid grid-cols-4 my-2">
-                <p className="text-xs font-semibold"></p>
-                <p className="text-xs font-semibold"></p>
-                <p className="text-xs font-semibold"></p>
-                <p className="text-xs font-semibold"></p>
-              </div>
-            </div>
+              <CustomDependentDropdownGroup>
+                {selectedOption === "National Treatment Guideline" && (
+                  <DiagnosisMultiDependentDropdown />
+                )}
+
+                {selectedOption === "ICD 11" && (
+                  <CustomDropdown
+                    data={cronicICDDropdownData}
+                    selected={icdSelectedLevelInput}
+                    setSelected={setIcdSelectedLevelInput}
+                    inputValue={icdInputValue}
+                    setInputValue={setIcdInputValue}
+                    open={icdOpen}
+                    optionOnClick={handleIcdSelectOption}
+                    selectOnClick={() => setIcdOpen((prev) => !prev)}
+                    label="ICD 11"
+                    required
+                  />
+                )}
+              </CustomDependentDropdownGroup>
+            </Section>
+
+            <Section>
+              <SubmitButton
+                title="Add"
+                icon={<BiPlusCircle size={14} />}
+                className="py-1.5 text-base w-[fit-content] whitespace-nowrap gap-2"
+              />
+
+              <ReviewOfSystemCardGroup>
+                <ReviewOfSystemCardItem />
+                <ReviewOfSystemCardItem />
+                <ReviewOfSystemCardItem />
+                <ReviewOfSystemCardItem />
+              </ReviewOfSystemCardGroup>
+            </Section>
           </div>
           <hr className="my-6" />
 

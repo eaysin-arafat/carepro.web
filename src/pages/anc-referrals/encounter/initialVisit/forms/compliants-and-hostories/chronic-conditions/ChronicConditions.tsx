@@ -15,6 +15,9 @@ import SubmitButton from "@/components/core/buttons/SubmitButton";
 import { BiPlusCircle } from "react-icons/bi";
 import CustomDependentDropdownGroup from "@/pages/anc-referrals/form-template/CustomDependentDropdownGroup";
 import CustomDropdown from "@/pages/anc-referrals/form-template/CustomDropdown";
+import DateInput from "@/components/core/form-elements/DatePicker";
+import ReviewOfSystemCardItem from "@/components/review-of-systems/CardItem";
+import ReviewOfSystemCardGroup from "@/pages/anc-referrals/form-template/ReviewOfSystemCardGroup";
 
 const cronicICDDropdownData = [
   { id: 1, name: "Neoplasms" },
@@ -49,7 +52,7 @@ const ChronicConditions = ({ toggler }) => {
       <form>
         <div>
           <div className="flex flex-col justify-center gap-6">
-            <div className="flex gap-2 items-center justify-center">
+            <div className="flex gap-2 items-center justify-between lg:justify-center md:justify-center">
               <Radio
                 label="National Treatment Guideline"
                 name="chronicF"
@@ -102,22 +105,21 @@ const ChronicConditions = ({ toggler }) => {
                 onChange={() => {}}
                 checked
               />
-              C
             </div>
 
-            <div className="flex gap-2 items-center justify-center space-x-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-center justify-center w-full gap-3">
               <DatePicker
                 name="diagnosed-date"
                 label="Date Diagnosed"
                 placeholder="Enter Date Diagnosed"
               />
 
-              <Checkbox label="Still Outgoing" className="ml-8" />
+              <Checkbox label="Still Outgoing" className="my-3 ml-0 lg:ml-12" />
 
-              <DatePicker
+              <DateInput
                 name="resolved-date"
                 label="Date Resolved"
-                placeholder="Enter Date Diagnosed"
+                onChange={() => {}}
               />
 
               <Select label="Certainty">
@@ -136,25 +138,12 @@ const ChronicConditions = ({ toggler }) => {
               className="py-1.5 text-base w-[fit-content] whitespace-nowrap gap-2"
             />
 
-            <div>
-              <div className="grid grid-cols-12 my-2">
-                <p className="text-xs font-semibold">Type</p>
-                <p className="text-xs font-semibold">Condition</p>
-                <p className="text-xs font-semibold">Diagnosed</p>
-                <p className="text-xs font-semibold">Resolved</p>
-                <p className="text-xs font-semibold">Ongoing</p>
-                <p className="text-xs font-semibold">Certainty</p>
-                <p className="text-xs font-semibold col-span-2">NTG</p>
-                <p className="text-xs font-semibold col-span-2">ICD</p>
-                <p className="text-xs font-semibold col-span-2">Comments</p>
-              </div>
-              <hr />
-
-              <div className="grid grid-cols-2 my-2">
-                <p className="text-xs font-semibold"></p>
-                <p className="text-xs font-semibold"></p>
-              </div>
-            </div>
+            <ReviewOfSystemCardGroup>
+              <ReviewOfSystemCardItem />
+              <ReviewOfSystemCardItem />
+              <ReviewOfSystemCardItem />
+              <ReviewOfSystemCardItem />
+            </ReviewOfSystemCardGroup>
           </div>
           <hr className="my-6" />
 

@@ -9,9 +9,12 @@ const AncStepButton = ({
 }) => {
   return (
     <button
-      className={cn("flex items-center justify-center gap-1 text-sm py-3.5", {
-        "border-b-[3px] border-b-[#1890FF]": isActive,
-      })}
+      className={cn(
+        "flex items-center justify-center gap-1 text-sm py-3.5 border-b-[3px] border-transparent",
+        {
+          "border-b-[3px] border-b-[#1890FF]": isActive,
+        }
+      )}
       onClick={onClick}
     >
       {isComplete && (

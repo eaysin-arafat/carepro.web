@@ -4,10 +4,10 @@ import Select from "@/components/core/form-elements/Select";
 import DefaultOpenModal from "@/components/core/modal/DefaultOpenModal";
 import PastRecordContainers from "@/components/past-record-containers/PastRecordContainers";
 import { useReadChiefComplaintByClientQuery } from "@/features/chief-complaint/chief-complaint-api";
-import FormGroup from "@/pages/anc-referrals/form-template/FormGroup";
 import PastEncounters from "@/pages/chief-complaints/create/PastEncounters";
 import { useState } from "react";
 import { Loader } from "react-feather";
+import Section from "./../../../../form-template/Section";
 
 const DisclosureITAndPNS = ({ toggler = () => {} }) => {
   const [patientOfferedSelect, setPatientOfferedSelect] = useState(null);
@@ -21,21 +21,21 @@ const DisclosureITAndPNS = ({ toggler = () => {} }) => {
       <form>
         <div>
           <div className="flex flex-col gap-3">
-            <FormGroup title="Disclosure, Index Testing and Partner Notification Services">
-              <div>
-                <p className="note mb-3">
-                  <b>Note :</b> Type ART number manually or click Generate ART
-                  number to automatically create new ART Number.
-                </p>
-                <Input
-                  label="ART Number"
-                  placeholder="Enter ART Number"
-                  defaultValue="1122334455"
-                  readOnly
-                />
-              </div>
+            <Section title="Disclosure, Index Testing and Partner Notification Services">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-3">
+                <div className="md:col-span-2">
+                  <p className="note mb-3">
+                    <b>Note :</b> Type ART number manually or click Generate ART
+                    number to automatically create new ART Number.
+                  </p>
+                  <Input
+                    label="ART Number"
+                    placeholder="Enter ART Number"
+                    defaultValue="1122334455"
+                    readOnly
+                  />
+                </div>
 
-              <div className="flex gap-2 items-center justify-center">
                 <Select label="Disclosure Councelling">
                   <option>Yes</option>
                   <option>No</option>
@@ -46,9 +46,7 @@ const DisclosureITAndPNS = ({ toggler = () => {} }) => {
                   <option>No</option>
                   <option>Unknown</option>
                 </Select>
-              </div>
 
-              <div className="flex gap-2 items-center justify-center">
                 <Select label="Notification Services">
                   <option>Yes</option>
                   <option>No</option>
@@ -58,9 +56,7 @@ const DisclosureITAndPNS = ({ toggler = () => {} }) => {
                   <option>Yes</option>
                   <option>No</option>
                 </Select>
-              </div>
 
-              <div className="flex gap-2 items-center justify-center">
                 <Select
                   label="Patient offered IT & PNS"
                   value={patientOfferedSelect}
@@ -77,9 +73,7 @@ const DisclosureITAndPNS = ({ toggler = () => {} }) => {
                   <option>Yes</option>
                   <option>No</option>
                 </Select>
-              </div>
 
-              <div className="flex gap-2 items-center justify-center">
                 <Input
                   label="Number Of Biological Contact..."
                   placeholder="Enter Number Of Biological Contact..."
@@ -88,9 +82,7 @@ const DisclosureITAndPNS = ({ toggler = () => {} }) => {
                   label="Number Of Sexual Contacts"
                   placeholder="Enter Other family member"
                 />
-              </div>
 
-              <div className="flex gap-2 items-center justify-center">
                 <Input
                   label="Number Of Other Contacts"
                   placeholder="Enter Number Of Other Contacts"
@@ -101,36 +93,42 @@ const DisclosureITAndPNS = ({ toggler = () => {} }) => {
                   readOnly
                 />
               </div>
-            </FormGroup>
+            </Section>
 
-            <FormGroup title="Treatment support">
-              <Select label="Does patient consent for followup programs">
-                <option>Yes</option>
-                <option>No</option>
-              </Select>
+            <Section title="Treatment support">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-3">
+                <div className="col-span-2 ">
+                  <Select label="Does patient consent for followup programs">
+                    <option>Yes</option>
+                    <option>No</option>
+                  </Select>
+                </div>
 
-              <div className="flex gap-2 items-center justify-center">
-                <Select label="Can the patient recive calls?">
-                  <option>Yes</option>
-                  <option>No</option>
-                </Select>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 items-center justify-center col-span-2 gap-3">
+                  <Select label="Can the patient recive calls?">
+                    <option>Yes</option>
+                    <option>No</option>
+                  </Select>
 
-                <Select label="Can the patient sms">
-                  <option>Yes</option>
-                  <option>No</option>
-                </Select>
+                  <Select label="Can the patient sms">
+                    <option>Yes</option>
+                    <option>No</option>
+                  </Select>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 md:col-span-2 items-center justify-center col-span-2 gap-3">
+                  <Select label="Does patient consent for followup programs">
+                    <option>Yes</option>
+                    <option>No</option>
+                  </Select>
+
+                  <Select label="Can the patient be visited at work?">
+                    <option>Yes</option>
+                    <option>No</option>
+                  </Select>
+                </div>
               </div>
-
-              <Select label="Can the patient be visited at home?">
-                <option>Yes</option>
-                <option>No</option>
-              </Select>
-
-              <Select label="Can the patient be visited at work?">
-                <option>Yes</option>
-                <option>No</option>
-              </Select>
-            </FormGroup>
+            </Section>
           </div>
           <hr className="my-6" />
 

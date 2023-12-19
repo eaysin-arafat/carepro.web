@@ -19,8 +19,8 @@ const NextOfKin = ({ toggler = () => {} }) => {
     <DefaultOpenModal isShow={true} title="Households" toggler={toggler}>
       <form>
         <div>
-          <div className="flex flex-col gap-3">
-            <div className="flex gap-2 items-center justify-center">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-3">
+            <div className="grid grid-cols-2 col-span-3 gap-3">
               <Select
                 label="Family Member Type"
                 value={nextKinTypeSelect}
@@ -36,13 +36,12 @@ const NextOfKin = ({ toggler = () => {} }) => {
               </Select>
 
               <Input
-                label="Other Family Member"
-                placeholder="Enter Other family member"
+                label="If other type"
                 disabled={nextKinTypeSelect !== "Other"}
               />
             </div>
 
-            <div className="flex gap-2 items-center justify-center">
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 col-span-3 gap-3">
               <Input
                 label="First Name"
                 placeholder="Enter First Name"
@@ -59,14 +58,20 @@ const NextOfKin = ({ toggler = () => {} }) => {
               />
             </div>
 
-            <div className="flex gap-2 items-center justify-center">
-              <div style={{ flex: 1 / 3 }}>
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 col-span-3 gap-3">
+              <Input label="Street name" defaultValue="Benson" />
+              <Input label="Township/Compound" defaultValue="Malunga" />
+              <Input label="Chief/Headman" />
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 col-span-3 gap-3">
+              <div className="col-span-1">
                 <Select label="Code">
                   <option>ZM(+260)</option>
                 </Select>
               </div>
 
-              <div style={{ flex: 2 / 3 }}>
+              <div className="col-span-2">
                 <Input
                   label="Cellphone Number"
                   placeholder="Enter Cellphone Number"
@@ -75,14 +80,14 @@ const NextOfKin = ({ toggler = () => {} }) => {
               </div>
             </div>
 
-            <div className="flex gap-2 items-center justify-center">
-              <div style={{ flex: 1 / 3 }}>
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 col-span-3 gap-3">
+              <div className="col-span-1">
                 <Select label="Code">
                   <option>ZM(+260)</option>
                 </Select>
               </div>
 
-              <div style={{ flex: 2 / 3 }}>
+              <div className="col-span-2">
                 <Input
                   label="Other Cellphone Number"
                   placeholder="Enter Other Cellphone Number"
@@ -91,11 +96,13 @@ const NextOfKin = ({ toggler = () => {} }) => {
               </div>
             </div>
 
-            <Input
-              label="Email address"
-              placeholder="Email address"
-              type="email"
-            />
+            <div className="col-span-3">
+              <Input
+                label="Email address"
+                placeholder="Email address"
+                type="email"
+              />
+            </div>
           </div>
           <hr className="my-6" />
 

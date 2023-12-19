@@ -4,7 +4,9 @@ import Input from "@/components/core/form-elements/Input";
 import Select from "@/components/core/form-elements/Select";
 import DefaultOpenModal from "@/components/core/modal/DefaultOpenModal";
 import PastRecordContainers from "@/components/past-record-containers/PastRecordContainers";
+import ReviewOfSystemCardItem from "@/components/review-of-systems/CardItem";
 import { useReadChiefComplaintByClientQuery } from "@/features/chief-complaint/chief-complaint-api";
+import ReviewOfSystemCardGroup from "@/pages/anc-referrals/form-template/ReviewOfSystemCardGroup";
 import PastEncounters from "@/pages/chief-complaints/create/PastEncounters";
 import { useState } from "react";
 import { Loader, PlusCircle } from "react-feather";
@@ -22,33 +24,31 @@ const Households = ({ toggler = () => {} }) => {
     <DefaultOpenModal isShow={true} title="Households" toggler={toggler}>
       <form>
         <div>
-          <div className="flex flex-col gap-3">
-            <div className="flex gap-2 items-center justify-center">
-              <Select
-                label="Family Member Type"
-                value={familyMemberSelect}
-                onChange={(e) => setFamilyMemberSelect(e.target.value)}
-              >
-                <option>Father</option>
-                <option>Mother</option>
-                <option>Child</option>
-                <option>Other</option>
-              </Select>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-3">
+            <Select
+              label="Family Member Type"
+              value={familyMemberSelect}
+              onChange={(e) => setFamilyMemberSelect(e.target.value)}
+            >
+              <option>Father</option>
+              <option>Mother</option>
+              <option>Child</option>
+              <option>Other</option>
+            </Select>
 
-              <Input
-                label="Other Family Member"
-                placeholder="Enter Other family member"
-                disabled={familyMemberSelect !== "Other"}
-              />
-            </div>
+            <Input
+              label="Other Family Member"
+              placeholder="Enter Other family member"
+              disabled={familyMemberSelect !== "Other"}
+            />
 
-            <div className="flex gap-2 items-center justify-center">
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-3 md:col-span-2">
               <Input label="First Name" placeholder="Enter First Name" />
               <Input label="Surname" placeholder="Enter Surname" />
               <Input label="Age" placeholder="Enter age" type="number" />
             </div>
 
-            <div className="flex gap-2 items-center justify-center">
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-3 md:col-span-2 lg:col-span-2">
               <Select
                 label="HIV Tested"
                 value={hivTestSelect}
@@ -78,26 +78,17 @@ const Households = ({ toggler = () => {} }) => {
               </Select>
             </div>
 
-            <SubmitButton
-              title="Add"
-              icon={<PlusCircle size={14} />}
-              className="py-1.5 text-base w-[fit-content] whitespace-nowrap gap-2"
-            />
-            <div>
-              <div className="grid grid-cols-4 gap-1 my-2">
-                <p className="form-submitted-data-list">Physical System</p>
-                <p className="form-submitted-data-list">Note</p>
-                <p className="form-submitted-data-list"></p>
-                <p className="form-submitted-data-list"></p>
-              </div>
-              <hr />
+            <div className="md:col-span-2 lg:col-span-2">
+              <SubmitButton
+                title="Add"
+                icon={<PlusCircle size={14} />}
+                className="py-1.5 text-base w-[fit-content] whitespace-nowrap gap-2"
+              />
 
-              <div className="grid grid-cols-4 my-2">
-                <p className="form-submitted-data-list"></p>
-                <p className="form-submitted-data-list"></p>
-                <p className="form-submitted-data-list"></p>
-                <p className="form-submitted-data-list"></p>
-              </div>
+              <ReviewOfSystemCardGroup>
+                <ReviewOfSystemCardItem />
+                <ReviewOfSystemCardItem />
+              </ReviewOfSystemCardGroup>
             </div>
           </div>
           <hr className="my-6" />

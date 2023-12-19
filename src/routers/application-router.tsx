@@ -12,11 +12,6 @@ import ModuleRoute from "./module-route";
 import publicRoutes from "./public";
 import QueueRoutes from "./queue-routes";
 import userAccountsRouter from "./user-accounts";
-import InitialVisit from "@/pages/anc-referrals/encounter/initialVisit/InitialVisitEncounter";
-import FollowUp from "@/pages/anc-referrals/encounter/follow-up/FollowUp";
-import InitialAlreadyOnART from "@/pages/anc-referrals/encounter/initial-already-on-art/InitialAlreadyOnART";
-import FollowUpPMTCT from "@/pages/anc-referrals/encounter/follow-up-pmtct/FollowUpPMTCT";
-import AncFirstTimeOnART from "../pages/anc-referrals/encounter/first-time-on-art/AncFirstTimeOnART";
 
 // routes for facility
 export const URLRequestFacility = (): string => "/request-facility";
@@ -55,26 +50,6 @@ const Routes = [
   {
     path: "encounter",
     element: <CreateMedicalEncounter />,
-  },
-  {
-    path: "anc-initial-visit",
-    element: <InitialVisit />,
-  },
-  {
-    path: "anc-follow-up",
-    element: <FollowUp />,
-  },
-  {
-    path: "anc-initial-already-on-art",
-    element: <InitialAlreadyOnART />,
-  },
-  {
-    path: "anc-1st-time-on-art",
-    element: <AncFirstTimeOnART />,
-  },
-  {
-    path: "anc-follow-up-pmtct",
-    element: <FollowUpPMTCT />,
   },
 ];
 

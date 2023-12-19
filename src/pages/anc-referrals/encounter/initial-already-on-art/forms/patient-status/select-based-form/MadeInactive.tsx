@@ -2,7 +2,7 @@ import DatePicker from "@/components/core/form-elements/CustomDatePicker";
 import Input from "@/components/core/form-elements/Input";
 import Select from "@/components/core/form-elements/Select";
 
-import FormGroup from "@/pages/anc-referrals/form-template/FormGroup";
+import Section from "@/pages/anc-referrals/form-template/Section";
 import { useState } from "react";
 
 const MadeInactive = () => {
@@ -17,12 +17,8 @@ const MadeInactive = () => {
     <form>
       <div>
         <div className="flex flex-col gap-3">
-          <FormGroup
-            className=""
-            title="Made inactive
-"
-          >
-            <div className="flex gap-2 items-center justify-center">
+          <Section className="" title="Made inactive">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-3">
               <DatePicker
                 label="Date made inactive"
                 onChange={() => {}}
@@ -34,9 +30,7 @@ const MadeInactive = () => {
                 label="Reason patient stopped taking ARVs"
                 placeholder="Enter Reason patient stopped taking ARVs"
               />
-            </div>
 
-            <div className="flex gap-2 items-center justify-center">
               <Select
                 label="Pregnancy Conclusion"
                 value={madeInactiveReasonSelect}
@@ -56,7 +50,7 @@ const MadeInactive = () => {
                 placeholder="Enter pregnancy duration"
               />
             </div>
-          </FormGroup>
+          </Section>
         </div>
       </div>
     </form>

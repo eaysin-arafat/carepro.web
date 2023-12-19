@@ -6,7 +6,7 @@ import TableHeader from "@/components/shared/table/TableHeader";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-function FollowUp() {
+function FirstTimeOnART() {
   const [state, setState] = useState(1);
 
   const data = [
@@ -114,7 +114,7 @@ function FollowUp() {
         <Select label="Cheif Complaints"></Select>
         <div className="flex items-end justify-end w-full">
           <Link
-            to="anc-follow-up-encounter"
+            to="anc-1st-time-on-art-encounter"
             className="px-2 py-3 bg-buttonBg w-full rounded-full text-center text-white"
           >
             Add Encounter
@@ -188,4 +188,4 @@ function FollowUp() {
   );
 }
 
-export default FollowUp;
+export default FirstTimeOnART;
