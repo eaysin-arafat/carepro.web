@@ -16,6 +16,8 @@ import ChronicConditions from "../forms/compliants-and-hostories/chronic-conditi
 import HistoryOfBloodTransfusions from "../forms/compliants-and-hostories/HistoryOfBloodTransfusions";
 import FamilySocial from "../forms/compliants-and-hostories/FamilySocial";
 import Allergies from "../forms/compliants-and-hostories/Allergies";
+// import NextButton from "@/components/core/buttons/NextButton";
+// import BackButton from "@/components/core/buttons/BackButton";
 
 const ComplaintsAndHistories = () => {
   // const [openModal, setOpenModal] = React.useState(false);
@@ -237,6 +239,11 @@ const ComplaintsAndHistories = () => {
         ancEncounterComplaintModalTypes.addFamilySocial && (
         <FamilySocial toggler={closeModal} />
       )}
+
+      {/* <div className="flex items-center justify-center my-4 gap-3">
+        <BackButton type="button" title="Save" />
+        <NextButton title="Next" type="button" />
+      </div> */}
     </div>
   );
 };
