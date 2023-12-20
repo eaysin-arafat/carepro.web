@@ -10,7 +10,7 @@ import AnotherClinic from "./select-based-form/AnotherClinic";
 import MadeInactive from "./select-based-form/MadeInactive";
 import StoppedART from "./select-based-form/StoppedART";
 import Reactivated from "./select-based-form/Reactivated";
-import Section from "@/pages/anc-referrals/form-template/Section";
+import Section from "@/pages/anc-referrals/form-component/Section";
 
 const patientStatusData = [
   {

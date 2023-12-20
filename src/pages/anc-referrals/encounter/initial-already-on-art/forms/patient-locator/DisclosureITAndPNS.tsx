@@ -7,7 +7,7 @@ import { useReadChiefComplaintByClientQuery } from "@/features/chief-complaint/c
 import PastEncounters from "@/pages/chief-complaints/create/PastEncounters";
 import { useState } from "react";
 import { Loader } from "react-feather";
-import Section from "./../../../../form-template/Section";
+import Section from "../../../../form-component/Section";
 
 const DisclosureITAndPNS = ({ toggler = () => {} }) => {
   const [patientOfferedSelect, setPatientOfferedSelect] = useState(null);

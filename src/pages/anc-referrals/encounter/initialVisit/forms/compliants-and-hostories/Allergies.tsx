@@ -4,17 +4,30 @@ import Select from "@/components/core/form-elements/Select";
 import DefaultOpenModal from "@/components/core/modal/DefaultOpenModal";
 import PastRecordContainers from "@/components/past-record-containers/PastRecordContainers";
 import ReviewOfSystemCardItem from "@/components/review-of-systems/CardItem";
-import ReviewOfSystemCardGroup from "@/pages/anc-referrals/form-template/ReviewOfSystemCardGroup";
+import ReviewOfSystemCardGroup from "@/pages/anc-referrals/form-component/ReviewOfSystemCardGroup";
 import { useState } from "react";
 import { PlusCircle } from "react-feather";
 
-const Allergies = ({ toggler = () => {} }) => {
-  const [selectedAllergies, setSelectedAllergies] = useState("");
-  const [selectDrugType, setSelectDrugType] = useState("");
+const Allergies = ({
+  toggler = () => {},
+  onSubmit,
+  isEditing,
+  initialValues,
+}) => {
+  const [selectedAllergies, setSelectedAllergies] = useState(
+    isEditing ? initialValues.allerty : ""
+  );
+  const [selectDrugType, setSelectDrugType] = useState(
+    isEditing ? initialValues.drugType : ""
+  );
+  const [severity, setSeverity] = useState(
+    isEditing ? initialValues.severity : ""
+  );
 
   const handleAllergiesChange = (e) => {
     setSelectedAllergies(e.target.value);
 
+    // Clear selectDrugType if the selected allergy is not "Drug"
     if (e.target.value !== "Drug") {
       setSelectDrugType("");
     }
@@ -22,7 +35,7 @@ const Allergies = ({ toggler = () => {} }) => {
 
   return (
     <DefaultOpenModal isShow={true} title="Allergies" toggler={toggler}>
-      <form>
+      <form onSubmit={onSubmit}>
         <div>
           <div className="flex flex-col gap-3">
             <div className="flex flex-col md:flex-row lg:flex-row gap-2 items-center justify-center">
@@ -41,7 +54,12 @@ const Allergies = ({ toggler = () => {} }) => {
                 <option>Animals</option>
               </Select>
 
-              <Select label="Severity" required>
+              <Select
+                label="Severity"
+                value={severity}
+                onChange={(e) => setSeverity(e.target.value)}
+                required
+              >
                 <option value="">Mild</option>
                 <option value="">Intermediate</option>
                 <option value="">Severe</option>
@@ -69,7 +87,7 @@ const Allergies = ({ toggler = () => {} }) => {
             </div>
 
             <SubmitButton
-              title="Add"
+              title={isEditing ? "Add" : "Update"}
               icon={<PlusCircle size={14} />}
               className="py-1.5 text-base w-[fit-content] whitespace-nowrap gap-2"
             />

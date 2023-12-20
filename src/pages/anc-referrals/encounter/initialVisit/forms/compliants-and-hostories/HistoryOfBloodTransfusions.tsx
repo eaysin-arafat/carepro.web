@@ -26,8 +26,15 @@ const historyData = {
   7: "Hemoptysis",
 };
 
-const HistoryOfBloodTransfusions = ({ toggler = () => {} }) => {
-  const [selectedItems, setSelectedItems] = React.useState<string[]>([]);
+const HistoryOfBloodTransfusions = ({
+  toggler = () => {},
+  onSubmit,
+  isEditing,
+  initialValues,
+}) => {
+  const [selectedItems, setSelectedItems] = React.useState<string[]>(
+    isEditing ? initialValues : []
+  );
 
   const { data, isLoading, status } = useReadChiefComplaintByClientQuery(
     "a1497272-3783-46f6-922a-08dbd06dc4d8"
@@ -49,7 +56,7 @@ const HistoryOfBloodTransfusions = ({ toggler = () => {} }) => {
       title="History Of Blood Transfusions"
       toggler={toggler}
     >
-      <form>
+      <form onSubmit={onSubmit}>
         <div>
           <div className="grid items-center  md:grid-cols-2 lg:grid-cols-2 gap-3">
             <Input label="Number of Units" required />

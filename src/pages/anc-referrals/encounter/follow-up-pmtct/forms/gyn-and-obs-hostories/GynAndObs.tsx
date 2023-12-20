@@ -7,7 +7,7 @@ import Textarea from "@/components/core/form-elements/Textarea";
 import DefaultOpenModal from "@/components/core/modal/DefaultOpenModal";
 import PastRecordContainers from "@/components/past-record-containers/PastRecordContainers";
 import { useReadChiefComplaintByClientQuery } from "@/features/chief-complaint/chief-complaint-api";
-import FormGroup from "@/pages/anc-referrals/form-template/FormGroup";
+import FormGroup from "@/pages/anc-referrals/form-component/FormGroup";
 import PastEncounters from "@/pages/chief-complaints/create/PastEncounters";
 import { cn } from "@/utilities/cn";
 import React, { useState } from "react";

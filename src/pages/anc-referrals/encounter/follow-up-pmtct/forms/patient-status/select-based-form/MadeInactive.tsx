@@ -2,7 +2,7 @@ import DatePicker from "@/components/core/form-elements/CustomDatePicker";
 import Input from "@/components/core/form-elements/Input";
 import Select from "@/components/core/form-elements/Select";
 
-import FormGroup from "@/pages/anc-referrals/form-template/FormGroup";
+import FormGroup from "@/pages/anc-referrals/form-component/FormGroup";
 import { useState } from "react";
 
 const MadeInactive = () => {

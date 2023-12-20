@@ -2,7 +2,7 @@ import Select from "@/components/core/form-elements/Select";
 import Textarea from "@/components/core/form-elements/Textarea";
 import DataRow from "@/components/core/table/DataRow";
 
-import FormGroup from "@/pages/anc-referrals/form-template/FormGroup";
+import FormGroup from "@/pages/anc-referrals/form-component/FormGroup";
 import { Fragment, useState } from "react";
 
 const AnotherClinic = () => {

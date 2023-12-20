@@ -7,7 +7,7 @@ import { Loader } from "react-feather";
 import PastEncounters from "@/pages/chief-complaints/create/PastEncounters";
 import Select from "@/components/core/form-elements/Select";
 import DateInput from "@/components/core/form-elements/DatePicker";
-import FormGroup from "@/pages/anc-referrals/form-template/FormGroup";
+import FormGroup from "@/pages/anc-referrals/form-component/FormGroup";
 
 const hivRiskScanningArr = [
   "In the last 6 months have you been sexually active?",

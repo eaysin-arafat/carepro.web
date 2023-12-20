@@ -9,10 +9,10 @@ import { useState } from "react";
 import SubmitButton from "@/components/core/buttons/SubmitButton";
 import { BiPlusCircle } from "react-icons/bi";
 import DiagnosisMultiDependentDropdown from "./DiagnosisMultiDependentDropdown";
-import CustomDependentDropdownGroup from "@/pages/anc-referrals/form-template/CustomDependentDropdownGroup";
-import CustomDropdown from "@/pages/anc-referrals/form-template/CustomDropdown";
-import Section from "@/pages/anc-referrals/form-template/Section";
-import ReviewOfSystemCardGroup from "@/pages/anc-referrals/form-template/ReviewOfSystemCardGroup";
+import CustomDependentDropdownGroup from "@/pages/anc-referrals/form-component/CustomDependentDropdownGroup";
+import CustomDropdown from "@/pages/anc-referrals/form-component/CustomDropdown";
+import Section from "@/pages/anc-referrals/form-component/Section";
+import ReviewOfSystemCardGroup from "@/pages/anc-referrals/form-component/ReviewOfSystemCardGroup";
 import ReviewOfSystemCardItem from "@/components/review-of-systems/CardItem";
 
 const cronicICDDropdownData = [

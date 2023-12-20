@@ -8,9 +8,11 @@ import PastEncounters from "@/pages/chief-complaints/create/PastEncounters";
 import Select from "@/components/core/form-elements/Select";
 import { useState } from "react";
 
-const DrugAdherence = ({ toggler }) => {
-  const [doesMissedSelect, setDoesMissedSelect] = useState("");
-  const [doesReason, setDoesReason] = useState("");
+const DrugAdherence = ({ toggler, onSubmit, isEditing, initialValues }) => {
+  const [doesMissedSelect, setDoesMissedSelect] = useState(
+    isEditing ? initialValues : ""
+  );
+  const [doesReason, setDoesReason] = useState(isEditing ? initialValues : "");
 
   const handleDoesSelect = (e) => {
     setDoesMissedSelect(e.target.value);
@@ -25,7 +27,7 @@ const DrugAdherence = ({ toggler }) => {
 
   return (
     <DefaultOpenModal title="Drug Adherence" isShow={true} toggler={toggler}>
-      <form>
+      <form onSubmit={onSubmit}>
         <div className="flex flex-col gap-3">
           <Select label="Has patient complained about medication?" required>
             <option>Yes</option>

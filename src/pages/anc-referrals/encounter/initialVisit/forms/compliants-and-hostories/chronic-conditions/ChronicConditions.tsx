@@ -13,11 +13,11 @@ import DatePicker from "@/components/core/form-elements/CustomDatePicker";
 import Checkbox from "@/components/core/form-elements/Checkbox";
 import SubmitButton from "@/components/core/buttons/SubmitButton";
 import { BiPlusCircle } from "react-icons/bi";
-import CustomDependentDropdownGroup from "@/pages/anc-referrals/form-template/CustomDependentDropdownGroup";
-import CustomDropdown from "@/pages/anc-referrals/form-template/CustomDropdown";
+import CustomDependentDropdownGroup from "@/pages/anc-referrals/form-component/CustomDependentDropdownGroup";
+import CustomDropdown from "@/pages/anc-referrals/form-component/CustomDropdown";
 import DateInput from "@/components/core/form-elements/DatePicker";
 import ReviewOfSystemCardItem from "@/components/review-of-systems/CardItem";
-import ReviewOfSystemCardGroup from "@/pages/anc-referrals/form-template/ReviewOfSystemCardGroup";
+import ReviewOfSystemCardGroup from "@/pages/anc-referrals/form-component/ReviewOfSystemCardGroup";
 
 const cronicICDDropdownData = [
   { id: 1, name: "Neoplasms" },

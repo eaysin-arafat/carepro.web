@@ -6,7 +6,7 @@ import Select from "@/components/core/form-elements/Select";
 import DefaultOpenModal from "@/components/core/modal/DefaultOpenModal";
 import PastRecordContainers from "@/components/past-record-containers/PastRecordContainers";
 import { useReadChiefComplaintByClientQuery } from "@/features/chief-complaint/chief-complaint-api";
-import Section from "@/pages/anc-referrals/form-template/Section";
+import Section from "@/pages/anc-referrals/form-component/Section";
 import PastEncounters from "@/pages/chief-complaints/create/PastEncounters";
 import { cn } from "@/utilities/cn";
 import React, { useState } from "react";

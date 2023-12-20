@@ -5,7 +5,7 @@ import GynAndObsHistories from "./step/GynAndObsHistories.tsx";
 import { useState } from "react";
 import ExaminationAndDiagnosis from "./step/ExaminationAndDiagnosis.tsx";
 import Plan from "./step/Plan.tsx";
-import ModuleStepping from "../../form-template/ModuleStepping.tsx";
+import ModuleStepping from "../../form-component/ModuleStepping.tsx";
 
 const InitialVisitEncounter = () => {
   const [activeStep, setActiveStep] = useState(0);

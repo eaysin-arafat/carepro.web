@@ -1,27 +1,32 @@
 import CancelAndAddButton from "@/components/core/buttons/CancelAndAddButton";
 import DatePicker from "@/components/core/form-elements/CustomDatePicker";
+import DateInput from "@/components/core/form-elements/DatePicker";
 import Select from "@/components/core/form-elements/Select";
 import DefaultOpenModal from "@/components/core/modal/DefaultOpenModal";
 import PastRecordContainers from "@/components/past-record-containers/PastRecordContainers";
 import { useState } from "react";
 
-const AncScranning = ({ toggler }) => {
-  const [syphilisSelect, setSyphilisSelect] = useState("");
-  const [hepatitisSelect, setHepatitisSelect] = useState("");
+const AncScranning = ({ toggler, onSubmit, isEditing, initialValues }) => {
+  const [syphilisSelect, setSyphilisSelect] = useState(
+    isEditing ? initialValues : ""
+  );
+  const [hepatitisSelect, setHepatitisSelect] = useState(
+    isEditing ? initialValues : ""
+  );
 
   return (
     <DefaultOpenModal title="ANC Screening" isShow={true} toggler={toggler}>
-      <form>
+      <form onSubmit={onSubmit}>
         <div>
           <div className="grid md:grid md:grid-cols-2 lg:grid lg:grid-cols-2 gap-3">
             <Select label="History of Bleeding" required>
-              <option value="">Yes</option>
-              <option value="">No</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
             </Select>
 
             <Select label="Draining" required>
-              <option value="">Yes</option>
-              <option value="">No</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
             </Select>
 
             <Select label="PV Mucas" required>
@@ -73,10 +78,11 @@ const AncScranning = ({ toggler }) => {
               <option value="">No</option>
             </Select>
 
-            <DatePicker
+            <DateInput
               label="Hepatitis Test Date"
               name="hepatitis-test-date"
               required
+              onChange={() => {}}
             />
 
             <Select

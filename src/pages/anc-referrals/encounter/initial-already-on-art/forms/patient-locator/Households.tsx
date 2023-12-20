@@ -6,7 +6,7 @@ import DefaultOpenModal from "@/components/core/modal/DefaultOpenModal";
 import PastRecordContainers from "@/components/past-record-containers/PastRecordContainers";
 import ReviewOfSystemCardItem from "@/components/review-of-systems/CardItem";
 import { useReadChiefComplaintByClientQuery } from "@/features/chief-complaint/chief-complaint-api";
-import ReviewOfSystemCardGroup from "@/pages/anc-referrals/form-template/ReviewOfSystemCardGroup";
+import ReviewOfSystemCardGroup from "@/pages/anc-referrals/form-component/ReviewOfSystemCardGroup";
 import PastEncounters from "@/pages/chief-complaints/create/PastEncounters";
 import { useState } from "react";
 import { Loader, PlusCircle } from "react-feather";

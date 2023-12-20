@@ -1,7 +1,7 @@
 import PastRecordList from "@/components/shared/past-record-list/PastRecordList";
 import FormLayout from "@/layout/FormLayout";
 import { useState } from "react";
-import ModuleStepping from "../../form-template/ModuleStepping.tsx";
+import ModuleStepping from "../../form-component/ModuleStepping.tsx";
 import ComplaintsAndHistories from "../initialVisit/step/ComplaintsAndHistories.tsx";
 import GynAndObsHistories from "../initialVisit/step/GynAndObsHistories.tsx";
 import ExaminationAndDiagnosis from "../initialVisit/step/ExaminationAndDiagnosis.tsx";

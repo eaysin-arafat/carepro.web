@@ -3,7 +3,7 @@ import SelectableButton from "@/components/core/buttons/SelectableButton";
 import Select from "@/components/core/form-elements/Select";
 import DefaultOpenModal from "@/components/core/modal/DefaultOpenModal";
 import PastRecordContainers from "@/components/past-record-containers/PastRecordContainers";
-import Section from "@/pages/anc-referrals/form-template/Section";
+import Section from "@/pages/anc-referrals/form-component/Section";
 import { cn } from "@/utilities/cn";
 import React from "react";
 

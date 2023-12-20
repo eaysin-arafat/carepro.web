@@ -142,7 +142,12 @@ const ComplaintsAndHistories = () => {
       {/* ANC Service */}
       <FormHeading title="ANC Service" modalHandler={handleAncService} isEdit />
       {addModal?.modalId === ancEncounterComplaintModalTypes.addAncService && (
-        <AncService toggler={closeModal} />
+        <AncService
+          toggler={closeModal}
+          onSubmit={() => {}}
+          isEditing={false}
+          initialValues=""
+        />
       )}
 
       {/* Presenting Complaints */}

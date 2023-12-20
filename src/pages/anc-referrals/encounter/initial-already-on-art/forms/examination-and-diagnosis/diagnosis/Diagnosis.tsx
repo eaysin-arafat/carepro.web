@@ -9,8 +9,8 @@ import { useState } from "react";
 import SubmitButton from "@/components/core/buttons/SubmitButton";
 import { BiPlusCircle } from "react-icons/bi";
 import DiagnosisMultiDependentDropdown from "./DiagnosisMultiDependentDropdown";
-import CustomDependentDropdownGroup from "@/pages/anc-referrals/form-template/CustomDependentDropdownGroup";
-import CustomDropdown from "@/pages/anc-referrals/form-template/CustomDropdown";
+import CustomDependentDropdownGroup from "@/pages/anc-referrals/form-component/CustomDependentDropdownGroup";
+import CustomDropdown from "@/pages/anc-referrals/form-component/CustomDropdown";
 
 const cronicICDDropdownData = [
   { id: 1, name: "Neoplasms" },

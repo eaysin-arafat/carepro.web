@@ -6,7 +6,7 @@ import { useReadChiefComplaintByClientQuery } from "@/features/chief-complaint/c
 import { Loader } from "react-feather";
 import PastEncounters from "@/pages/chief-complaints/create/PastEncounters";
 
-const FamilySocial = ({ toggler }) => {
+const FamilySocial = ({ toggler, onSubmit, isEditing, initialValues }) => {
   const { data, isLoading, status } = useReadChiefComplaintByClientQuery(
     "a1497272-3783-46f6-922a-08dbd06dc4d8"
   );
@@ -17,7 +17,7 @@ const FamilySocial = ({ toggler }) => {
       isShow={true}
       toggler={toggler}
     >
-      <form>
+      <form onSubmit={onSubmit}>
         <div className="flex flex-col gap-6">
           <div>
             <div className="space-y-4">

@@ -1,7 +1,7 @@
 import Select from "@/components/core/form-elements/Select";
 import Textarea from "@/components/core/form-elements/Textarea";
-import FormGroup from "@/pages/anc-referrals/form-template/FormGroup";
-import Section from "@/pages/anc-referrals/form-template/Section";
+import FormGroup from "@/pages/anc-referrals/form-component/FormGroup";
+import Section from "@/pages/anc-referrals/form-component/Section";
 
 import { Fragment, useState } from "react";
 
